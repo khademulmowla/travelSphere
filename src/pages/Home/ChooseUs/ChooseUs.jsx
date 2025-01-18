@@ -2,6 +2,7 @@ import team1 from '../../../assets/images/con1.png'
 import team2 from '../../../assets/images/con2.png'
 import { motion } from "framer-motion"
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import { Typewriter } from 'react-simple-typewriter';
 
 
 const ChooseUs = () => {
@@ -29,13 +30,26 @@ const ChooseUs = () => {
                         </div>
                         <motion.h1
                             animate={{ x: 100 }}
-                            transition={{ duration: 2, delay: 1, ease: "easeInOut", repeat: Infinity }}
+                            transition={{ duration: 3, delay: 2, ease: "easeInOut", repeat: Infinity }}
                             className="text-4xl font-bold my-4"><motion.span
-                                animate={{ color: ['#349f41', '#dbbe1d', '#077359'] }}
+                                animate={{ color: ['#349f41', '#da56cc', '#077359'] }}
                                 transition={{ duration: 3, repeat: Infinity, delay: 2, ease: "easeInOut" }}
                             >Why Choose Us?</motion.span></motion.h1>
-                        <p className="mt-4">
+                        {/* <p className="mt-4">
                             Find out why we lead the travel document industry enabling travelers to fly with ease.
+                        </p> */}
+                        <p className="mt-4">
+                            <Typewriter
+                                words={[
+                                    "Find out why we lead the travel document fly with ease."
+                                ]}
+                                loop={0}
+                                cursor
+                                cursorStyle="|"
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={2000}
+                            />
                         </p>
                         <button className="btn bg-black text-white mt-2 px-6 py-2 rounded-full">
                             Apply Now →
