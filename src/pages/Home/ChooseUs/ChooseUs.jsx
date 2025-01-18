@@ -1,11 +1,16 @@
 import team1 from '../../../assets/images/con1.png'
 import team2 from '../../../assets/images/con2.png'
 import { motion } from "framer-motion"
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 
 const ChooseUs = () => {
     return (
         <section className="py-12 w-11/12 mx-auto">
+            <SectionTitle
+                subHeading={"Check it out"}
+                heading={"Find Your Desired Place"}
+            ></SectionTitle>
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
 
