@@ -15,8 +15,10 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router}>
-          </RouterProvider>
+          <div className='max-w-screen-xl mx-auto'>
+            <RouterProvider router={router}>
+            </RouterProvider>
+          </div>
         </QueryClientProvider>
         <Toaster position='top-right' reverseOrder={false} />
       </HelmetProvider>

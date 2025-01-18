@@ -1,9 +1,11 @@
-import React from 'react';
+import Carousel from "./Banner/Carousel";
+import Featured from "./Featured/Featured";
 
 const Home = () => {
     return (
         <div>
-            <h1>hello</h1>
+            <Carousel></Carousel>
+            <Featured></Featured>
 
         </div>
     );
