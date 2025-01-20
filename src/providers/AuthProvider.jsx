@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
-import useAxiosPublic from '../../src/hooks/useAxiosPublic';
+import axios from "axios";
 
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -12,7 +12,6 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
-    const axiosPublic = useAxiosPublic()
 
 
     const googleSignIn = () => {
@@ -47,7 +46,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 // get token and store client
                 const userInfo = { email: currentUser.email };
-                axiosPublic.post('/jwt', userInfo)
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`, userInfo)
                     .then(res => {
                         if (res.data.token) {
                             localStorage.setItem('access-token', res.data.token);

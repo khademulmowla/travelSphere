@@ -51,38 +51,39 @@ export const router = createBrowserRouter([
         element: <DashBoardLayout></DashBoardLayout>,
         children: [{
             index: true,
+            path: 'profile',
             element: <Profile></Profile>
         },
         {
-            path: '/add-story',
+            path: 'add-story',
             element: <AddStories></AddStories>
         },
         {
-            path: '/manage-story',
+            path: 'manage-story',
             element: <ManageStories></ManageStories>
         },
         {
-            path: '/join-guide',
+            path: 'join-guide',
             element: <JoinGuide></JoinGuide>
         },
         {
-            path: '/my-bookings',
+            path: 'my-bookings',
             element: <MyBookings></MyBookings>
         },
         {
-            path: '/myassigntour',
+            path: 'myassigntour',
             element: <MyAssignedTours></MyAssignedTours>
         },
         {
-            path: '/add-package',
+            path: 'add-package',
             element: <AddPackage></AddPackage>
         },
         {
-            path: '/manage-candidate',
+            path: 'manage-candidates',
             element: <ManageCandidates></ManageCandidates>
         },
         {
-            path: '/manage-user',
+            path: 'manage-users',
             element: <ManageUsers></ManageUsers>
         }
         ]

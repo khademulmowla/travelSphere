@@ -1,10 +1,15 @@
-
+import { MdHomeWork } from 'react-icons/md'
+import MenuItem from './MenuItem'
 const TourGuideMenu = () => {
     return (
-        <div>
-            <h3>tour guide menu</h3>
-
-        </div>
+        <>
+            <MenuItem icon={MdHomeWork} label='My Assigned Tour' address='myassigntour' />
+            {/* <MenuItem
+                icon={MdOutlineManageHistory}
+                label='Manage Orders'
+                address='manage-orders'
+            /> */}
+        </>
     );
 };
 
