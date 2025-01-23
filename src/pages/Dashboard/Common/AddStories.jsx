@@ -4,7 +4,7 @@ import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useState } from "react";
 import { imageUpload } from "../../../api/utils";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import AddStoryForm from "../../../components/Form/AddStoryForm/AddStoryForm";
 const AddStories = () => {
     const { user } = useAuth()
@@ -27,19 +27,19 @@ const AddStories = () => {
         }
 
         const storiesData = {
-            name, description, images: imageUrls
+            name, description, images: imageUrls, email: user?.email
         }
         console.table(storiesData)
 
-        // try {
-        //     await axiosSecure.post('/packages', plantData)
-        //     toast.success('Data Added Successfully!')
-        //     // navigate('/dashboard/my-inventory')
-        // } catch (err) {
-        //     console.log(err)
-        // } finally {
-        //     setLoading(false)
-        // }
+        try {
+            await axiosSecure.post('/add-story', storiesData)
+            toast.success('Data Added Successfully!')
+            // navigate('/dashboard/my-inventory')
+        } catch (err) {
+            console.log(err)
+        } finally {
+            setLoading(false)
+        }
     }
     return (
         <div>
