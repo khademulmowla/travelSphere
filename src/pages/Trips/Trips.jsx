@@ -5,8 +5,8 @@ import axios from "axios";
 import Card from "../../components/Card/Card";
 
 const Trips = () => {
-    const { data: packages, isLoading } = useQuery({
-        queryKey: ['packages'],
+    const { data: trips, isLoading } = useQuery({
+        queryKey: ['trips'],
         queryFn: async () => {
             const { data } = await axios(`${import.meta.env.VITE_API_URL}/packages`)
             return data
@@ -16,9 +16,9 @@ const Trips = () => {
     return (
         <Container>
             {
-                packages && packages.length > 0 ? <div className='pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+                trips && trips.length > 0 ? <div className='pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                     {
-                        packages.map(trip => <Card key={trip._id} trip={trip}></Card>)
+                        trips.map(trip => <Card key={trip._id} trip={trip}></Card>)
                     }
                 </div> : <p>No data is available</p>
 
