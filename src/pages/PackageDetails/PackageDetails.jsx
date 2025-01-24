@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import LoadingSpinner from '../../components/Shared/LoadingSpinner';
 import { Helmet } from 'react-helmet-async';
 import Heading from '../../components/Shared/Heading';
-import Button from '../../components/Shared/Button/Button';
 import Container from '../../components/Shared/Container';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
@@ -17,7 +16,7 @@ const PackageDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const { user } = useAuth()
-    let [isOpen, setIsOpen] = useState(false)
+    // let [isOpen, setIsOpen] = useState(false)
     const [startDate, setStartDate] = useState(new Date())
     const [selectedGuide, setSelectedGuide] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
@@ -49,6 +48,7 @@ const PackageDetails = () => {
 
         const bookingData = {
             packageId: id,
+            packageName: trip.name,
             userName: user.displayName,
             userEmail: user.email,
             price: trip.price,
@@ -155,6 +155,10 @@ const PackageDetails = () => {
                 <form onSubmit={handleBooking}>
                     <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
                         <div>
+                            <label className='text-gray-700'>Package Name</label>
+                            <input type='text' disabled defaultValue={trip.name} className='block w-full px-4 py-2 border rounded-md' />
+                        </div>
+                        <div>
                             <label className='text-gray-700'>Tourist Name</label>
                             <input type='text' disabled defaultValue={user?.displayName} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
@@ -173,7 +177,7 @@ const PackageDetails = () => {
                     </div>
                     <div>
                         <label className='text-gray-700'>Select Tour Guide</label>
-                        <select value={selectedGuide} onChange={(e) => setSelectedGuide(e.target.value)} className='w-full mt-2 px-4 py-3 border rounded-md'>
+                        <select value={selectedGuide} onChange={(e) => setSelectedGuide(e.target.value)} className='w-1/2 mt-2 px-4 py-3 border rounded-md'>
                             <option value=''>Select Tour Guide</option>
                             {tourGuides.map(guide => (
                                 <option key={guide._id} value={guide.name}>{guide.name}</option>

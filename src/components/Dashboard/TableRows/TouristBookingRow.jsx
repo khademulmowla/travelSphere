@@ -1,23 +1,26 @@
-import React from 'react';
-import { FaAmazonPay, FaPaypal, FaTrashAlt } from 'react-icons/fa';
+import { FaAmazonPay, FaTrashAlt } from 'react-icons/fa';
 
-const TouristBookingRow = () => {
+const TouristBookingRow = ({ bookingData, refetch }) => {
+    console.log(bookingData)
+    const { packageName, price, startDate, guide, status } = bookingData || {}
+
+
     return (
         <tr>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>NAME</p>
+                <p className='text-gray-900 whitespace-no-wrap'>{packageName}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>GUIDE NAME</p>
+                <p className='text-gray-900 whitespace-no-wrap'>{guide}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>DATE</p>
+                <p className='text-gray-900 whitespace-no-wrap'>{startDate}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>PRICE</p>
+                <p className='text-gray-900 whitespace-no-wrap'>{price}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>STATUS</p>
+                <p className='text-gray-900 whitespace-no-wrap'>{status}</p>
             </td>
 
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
