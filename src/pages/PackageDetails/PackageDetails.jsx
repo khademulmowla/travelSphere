@@ -10,6 +10,8 @@ import Container from '../../components/Shared/Container';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 import useAuth from '../../hooks/useAuth';
+import BookModal from '../../components/Shared/Modal/BookModal/BookModal';
+import toast from 'react-hot-toast';
 
 const PackageDetails = () => {
     const navigate = useNavigate()
@@ -17,6 +19,9 @@ const PackageDetails = () => {
     const { user } = useAuth()
     let [isOpen, setIsOpen] = useState(false)
     const [startDate, setStartDate] = useState(new Date())
+    const [selectedGuide, setSelectedGuide] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
+
 
     const { data: trip = {}, isLoding, refetch } = useQuery({
         queryKey: ['trip', id],
@@ -34,10 +39,37 @@ const PackageDetails = () => {
         }
     });
 
+    // for booking form and save a booking //
+    const handleBooking = async (e) => {
+        e.preventDefault();
+        if (!user) {
+            navigate('/login');
+            return;
+        }
 
-    // const closeModal = () => {
-    //     setIsOpen(false)
-    // }
+        const bookingData = {
+            packageId: id,
+            userName: user.displayName,
+            userEmail: user.email,
+            price: trip.price,
+            startDate,
+            guide: selectedGuide,
+            status: 'pending'
+        };
+        console.log(bookingData)
+
+        try {
+            await axios.post(`${import.meta.env.VITE_API_URL}/books`, bookingData);
+            setModalOpen(true);
+            toast.success('Booking successfully')
+        } catch (error) {
+            console.error('Error booking package:', error);
+        }
+    };
+
+
+
+
     console.log()
     const { category, images, price, name } = trip
     if (isLoding) return <LoadingSpinner></LoadingSpinner>
@@ -113,100 +145,57 @@ const PackageDetails = () => {
             <div className="mt-12">
                 <Heading title={name} subtitle={`Category: ${category}`} />
                 <hr className="my-6" />
-                <div className="flex justify-between">
-                    <p className="font-bold text-3xl text-gray-500">Price: ${price}</p>
-                    <Button label="Book Now" />
-                </div>
+                <p className="font-bold text-xl text-gray-500">Price: ${price}</p>
                 <hr className="my-6" />
             </div>
             {/* booking form  */}
 
-            <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
-                <h2 className='text-lg font-semibold text-gray-700 capitalize '>
-                    Place A Bid
-                </h2>
-                <img
-                    className='rounded-full'
-                    height='30'
-                    width='30'
-                    alt='Avatar'
-                    referrerPolicy='no-referrer'
-                    src={user?.photoURL}
-                />
-
-                <form>
-                    <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
+            <section className='p-6 bg-white rounded-md shadow-md'>
+                <h2 className='text-lg font-semibold text-gray-700'>Place A Bid</h2>
+                <form onSubmit={handleBooking}>
+                    <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
                         <div>
-                            <label className='text-gray-700 ' htmlFor='emailAddress'>
-                                Tourist Name
-                            </label>
-                            <input
-                                id='touristName'
-                                type='text'
-                                name='name'
-                                disabled
-                                defaultValue={user?.displayName}
-                                className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
-                            />
-                        </div>
-
-                        <div>
-                            <label className='text-gray-700 ' htmlFor='emailAddress'>
-                                Tourist Email
-                            </label>
-                            <input
-                                id='emailAddress'
-                                type='email'
-                                name='email'
-                                disabled
-                                defaultValue={user?.email}
-                                className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
-                            />
+                            <label className='text-gray-700'>Tourist Name</label>
+                            <input type='text' disabled defaultValue={user?.displayName} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
                         <div>
-                            <label className='text-gray-700 ' htmlFor='price'>
-                                Price
-                            </label>
-                            <input
-                                id='price'
-                                type='text'
-                                name='price'
-                                required
-                                className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
-                            />
+                            <label className='text-gray-700'>Tourist Email</label>
+                            <input type='email' disabled defaultValue={user?.email} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
-                        <div className='flex flex-col gap-2 '>
+                        <div>
+                            <label className='text-gray-700'>Price</label>
+                            <input type='text' disabled defaultValue={trip.price} className='block w-full px-4 py-2 border rounded-md' />
+                        </div>
+                        <div>
                             <label className='text-gray-700'>Deadline</label>
-
-                            {/* Date Picker Input Field */}
-                            <DatePicker
-                                className='border p-2 rounded-md'
-                                selected={startDate}
-                                onChange={date => setStartDate(date)}
-                            />
+                            <DatePicker selected={startDate} onChange={date => setStartDate(date)} className='border p-2 rounded-md w-full' />
                         </div>
                     </div>
-                    <div className='flex flex-col gap-2'>
+                    <div>
                         <label className='text-gray-700'>Select Tour Guide</label>
-                        <select required className='w-2/6 mt-2 px-4 py-3 border focus:outline-lime-500 rounded-md bg-white' name='guide'>
+                        <select value={selectedGuide} onChange={(e) => setSelectedGuide(e.target.value)} className='w-full mt-2 px-4 py-3 border rounded-md'>
                             <option value=''>Select Tour Guide</option>
-                            {tourGuides.map((guide) => (
+                            {tourGuides.map(guide => (
                                 <option key={guide._id} value={guide.name}>{guide.name}</option>
                             ))}
                         </select>
-
                     </div>
-
                     <div className='flex justify-end mt-6'>
-                        <button
-                            type='submit'
-                            className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'
-                        >
-                            Place Bid
+                        <button type='submit' className='px-8 py-2.5 text-white bg-gray-700 rounded-md hover:bg-gray-600'>
+                            Book Now
                         </button>
                     </div>
                 </form>
             </section>
+            {modalOpen && (
+                <BookModal onClose={() => setModalOpen(false)}>
+                    <p>Your booking is confirmed. You can track it on the My Bookings page.</p>
+                    <button onClick={() => navigate('/dashboard/my-bookings')} className='mt-4 px-4 py-2 bg-blue-500 text-white rounded'>
+                        Go to My Bookings
+                    </button>
+                </BookModal>
+            )}
+
         </Container>
 
     );
