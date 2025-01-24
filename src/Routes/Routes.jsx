@@ -19,6 +19,7 @@ import ManageCandidates from "../pages/Dashboard/Admin/ManageCandidates";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import PackageDetails from "../pages/PackageDetails/PackageDetails";
 import EditStory from "../pages/EditStory/EditStory";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -54,47 +55,51 @@ export const router = createBrowserRouter([
     { path: '/signup', element: <SignUp></SignUp> },
     {
         path: '/dashboard',
-        element: <DashBoardLayout></DashBoardLayout>,
+        element: (
+            <PrivateRoute>
+                <DashBoardLayout></DashBoardLayout>
+            </PrivateRoute>
+        ),
         children: [{
             index: true,
             path: 'profile',
-            element: <Profile></Profile>
+            element: (<PrivateRoute><Profile></Profile></PrivateRoute>),
         },
         {
             path: 'add-story',
-            element: <AddStories></AddStories>
+            element: (<PrivateRoute><AddStories></AddStories></PrivateRoute>),
         },
         {
             path: 'manage-story',
-            element: <ManageStories></ManageStories>
+            element: (<PrivateRoute><ManageStories></ManageStories></PrivateRoute>),
         },
         {
             path: 'edit-story/:id',
-            element: <EditStory></EditStory>
+            element: (<PrivateRoute><EditStory></EditStory></PrivateRoute>),
         },
         {
             path: 'join-guide',
-            element: <JoinGuide></JoinGuide>
+            element: (<PrivateRoute><JoinGuide></JoinGuide></PrivateRoute>),
         },
         {
             path: 'my-bookings',
-            element: <MyBookings></MyBookings>
+            element: (<PrivateRoute><MyBookings></MyBookings></PrivateRoute>)
         },
         {
             path: 'myassigntour',
-            element: <MyAssignedTours></MyAssignedTours>
+            element: (<PrivateRoute><MyAssignedTours></MyAssignedTours></PrivateRoute>)
         },
         {
             path: 'add-package',
-            element: <AddPackage></AddPackage>
+            element: (<PrivateRoute><AddPackage></AddPackage></PrivateRoute>)
         },
         {
             path: 'manage-candidates',
-            element: <ManageCandidates></ManageCandidates>
+            element: (<PrivateRoute><ManageCandidates></ManageCandidates></PrivateRoute>)
         },
         {
             path: 'manage-users',
-            element: <ManageUsers></ManageUsers>
+            element: (<PrivateRoute><ManageUsers></ManageUsers></PrivateRoute>)
         }
         ]
     }
