@@ -14,7 +14,7 @@ const Tourism = () => {
             .catch(err => console.error(err));
 
         // Fetch random 6 tour guides
-        axios.get(`${import.meta.env.VITE_API_URL}/random-guides`)
+        axios.get(`${import.meta.env.VITE_API_URL}/random-tour-guides`)
             .then(res => setGuides(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -49,7 +49,12 @@ const Tourism = () => {
                                     <img src={guide.image} alt={guide.name} className="w-full h-48 object-cover rounded-lg" />
                                     <h3 className="text-xl font-bold">{guide.name}</h3>
                                     <p>{guide.experience} years of experience</p>
-                                    <a href={`/guide/${guide._id}`} className="text-blue-500 underline">View Details</a>
+                                    <button
+                                        onClick={() => navigate(`/guide/${guide._id}`)}
+                                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg"
+                                    >
+                                        Details
+                                    </button>
                                 </div>
                             ))}
                         </div>

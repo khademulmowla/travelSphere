@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import LoadingSpinner from '../../components/Shared/LoadingSpinner';
 import { Helmet } from 'react-helmet-async';
 import Heading from '../../components/Shared/Heading';
@@ -12,6 +12,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import useAuth from '../../hooks/useAuth';
 
 const PackageDetails = () => {
+    const navigate = useNavigate()
     const { id } = useParams()
     const { user } = useAuth()
     let [isOpen, setIsOpen] = useState(false)
@@ -24,6 +25,15 @@ const PackageDetails = () => {
             return data
         }
     })
+    // for tour guide //
+    const { data: tourGuides = [], isLoading } = useQuery({
+        queryKey: ['tourGuides'],
+        queryFn: async () => {
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/tour-guides`);
+            return data;
+        }
+    });
+
 
     // const closeModal = () => {
     //     setIsOpen(false)
@@ -74,6 +84,30 @@ const PackageDetails = () => {
                     ) : null}
                 </div>
             </div>
+            {/* for tour guide  */}
+            {isLoading ? (
+                <LoadingSpinner />
+            ) : (
+                <div className="mt-12">
+                    <h2 className="text-2xl font-bold">Meet Our Tour Guides</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        {tourGuides.map((guide) => (
+                            <div key={guide._id} className="p-4 border rounded-lg shadow">
+                                <img className="w-24 h-24 rounded-full mx-auto" src={guide.image} alt={guide.name} />
+                                <h3 className="text-lg font-semibold text-center mt-2">{guide.name}</h3>
+                                <p className="text-gray-500 text-center">{guide.email}</p>
+                                <button
+                                    onClick={() => navigate(`/guide/${guide._id}`)}
+                                    className="mt-3 block w-full text-center text-white bg-blue-500 py-2 rounded-lg hover:bg-blue-600"
+                                >
+                                    View Profile
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
 
             {/* Information Section */}
             <div className="mt-12">
@@ -154,16 +188,13 @@ const PackageDetails = () => {
                     </div>
                     <div className='flex flex-col gap-2'>
                         <label className='text-gray-700'>Select Tour Guide</label>
-                        <select
-                            required
-                            className='w-2/6 mt-2 px-4 py-3 border focus:outline-lime-500 rounded-md bg-white'
-                            name='category'
-                        >
-                            <option value='Indoor'>Indoor</option>
-                            <option value='Outdoor'>Outdoor</option>
-                            <option value='Succulent'>Succulent</option>
-                            <option value='Flowering'>Flowering</option>
+                        <select required className='w-2/6 mt-2 px-4 py-3 border focus:outline-lime-500 rounded-md bg-white' name='guide'>
+                            <option value=''>Select Tour Guide</option>
+                            {tourGuides.map((guide) => (
+                                <option key={guide._id} value={guide.name}>{guide.name}</option>
+                            ))}
                         </select>
+
                     </div>
 
                     <div className='flex justify-end mt-6'>
