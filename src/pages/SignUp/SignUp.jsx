@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import useAuth from '../../hooks/useAuth'
 import { TbFidgetSpinner } from 'react-icons/tb'
-import { imageUpload } from '../../api/utils'
+import { imageUpload, saveUser } from '../../api/utils'
 import toast from 'react-hot-toast'
 
 const SignUp = () => {
@@ -27,6 +27,7 @@ const SignUp = () => {
             //3. Save username & profile photo
             await updateUserProfile(name, photoURL)
             console.log(result)
+            await saveUser({ ...result?.user, displayName: name, photoURL })
 
             navigate('/')
             toast.success('Signup Successful')
@@ -40,7 +41,8 @@ const SignUp = () => {
     const handleGoogleSignIn = async () => {
         try {
             //User Registration using google
-            await googleSignIn()
+            const data = await googleSignIn()
+            await saveUser(data?.user)
 
             navigate('/')
             toast.success('Signup Successful')

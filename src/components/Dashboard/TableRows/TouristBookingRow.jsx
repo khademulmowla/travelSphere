@@ -21,12 +21,10 @@ const TouristBookingRow = () => {
             </td>
 
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <td>
-                    <button className="btn mr-2 hover:bg-green-400 hover:text-white"><FaAmazonPay className='text-2xl'></FaAmazonPay></button>
-                </td>
-                <td>
-                    <button className="btn hover:bg-red-400 hover:text-white"><FaTrashAlt className='text-2xl'></FaTrashAlt></button>
-                </td>
+
+                <button className="btn mr-2 hover:bg-green-400 hover:text-white"><FaAmazonPay className='text-2xl'></FaAmazonPay></button>
+                <button className="btn hover:bg-red-400 hover:text-white"><FaTrashAlt className='text-2xl'></FaTrashAlt></button>
+
                 {/* <DeleteModal handleDelete={handleDelete} isOpen={isOpen} closeModal={closeModal} /> */}
             </td>
         </tr>
