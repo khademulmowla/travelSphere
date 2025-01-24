@@ -69,11 +69,6 @@ const EditStory = () => {
             Swal.fire("Success", "Photo removed successfully", "success");
         }
     };
-
-    const handleRemoveNewPhoto = (photoUrl) => {
-        setUploadImage(prevState => prevState.filter(img => img.url !== photoUrl));
-    };
-
     if (isLoading) return <LoadingSpinner />;
 
     return (
@@ -111,12 +106,6 @@ const EditStory = () => {
                         <div key={index} className="flex gap-2 items-center">
                             <img className="w-20 h-20 object-cover rounded" src={img.url} alt={img.image.name} />
                             <p>{img.image.name} - {img.image.size} Bytes</p>
-                            <button
-                                onClick={() => handleRemoveNewPhoto(img.url)}
-                                className="text-red-500 hover:text-red-700"
-                            >
-                                Remove
-                            </button>
                         </div>
                     ))}
                 </div>

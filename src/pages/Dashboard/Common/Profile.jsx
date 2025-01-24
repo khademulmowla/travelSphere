@@ -26,7 +26,7 @@ const Profile = () => {
                     <a href='#' className='relative block'>
                         <img
                             alt='profile'
-                            src={user.photoURL}
+                            src={user?.photoURL}
                             className='mx-auto object-cover rounded-full h-24 w-24  border-2 border-white '
                         />
                     </a>
