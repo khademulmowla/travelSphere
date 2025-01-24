@@ -18,6 +18,7 @@ import AddPackage from "../pages/Dashboard/Admin/AddPackage";
 import ManageCandidates from "../pages/Dashboard/Admin/ManageCandidates";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import PackageDetails from "../pages/PackageDetails/PackageDetails";
+import EditStory from "../pages/EditStory/EditStory";
 
 export const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
         {
             path: 'manage-story',
             element: <ManageStories></ManageStories>
+        },
+        {
+            path: 'edit-story/:id',
+            element: <EditStory></EditStory>
         },
         {
             path: 'join-guide',

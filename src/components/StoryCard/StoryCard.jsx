@@ -1,8 +1,13 @@
 import { FaTrashAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const StoryCard = ({ story, handleDeleteItem }) => {
+    const navigate = useNavigate()
     console.log(story)
     const { name, description, images } = story || {}
+    const handleEditItem = (story) => {
+        navigate(`/dashboard/edit-story/${story._id}`);
+    };
     return (
         <div
             className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl'
@@ -40,8 +45,19 @@ const StoryCard = ({ story, handleDeleteItem }) => {
                 </div>
                 <div className='font-semibold text-lg'>{name}</div>
                 <div className='font-semibold text-lg'>{description}</div>
-                <div>
-                    <button onClick={() => handleDeleteItem(story)} className="btn btn-sm bg-red-500 text-white"><FaTrashAlt className='text-lg'></FaTrashAlt></button>
+                <div className='flex gap-2'>
+                    <button
+                        onClick={() => handleEditItem(story)}
+                        className="btn btn-sm bg-blue-500 text-white"
+                    >
+                        Edit
+                    </button>
+                    <button
+                        onClick={() => handleDeleteItem(story)}
+                        className="btn btn-sm bg-red-500 text-white"
+                    >
+                        <FaTrashAlt className='text-lg' />
+                    </button>
                 </div>
             </div>
         </div>
