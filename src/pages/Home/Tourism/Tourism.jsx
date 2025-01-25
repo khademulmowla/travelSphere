@@ -3,9 +3,11 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import axios from "axios";
 import Card from "../../../components/Card/Card";
+import { useNavigate } from "react-router-dom";
 const Tourism = () => {
     const [packages, setPackages] = useState([]);
     const [guides, setGuides] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Fetch random 3 packages

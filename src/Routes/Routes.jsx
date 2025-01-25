@@ -20,6 +20,8 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import PackageDetails from "../pages/PackageDetails/PackageDetails";
 import EditStory from "../pages/EditStory/EditStory";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import GuideRoute from "./GuideRoute";
 
 export const router = createBrowserRouter([
     {
@@ -87,19 +89,35 @@ export const router = createBrowserRouter([
         },
         {
             path: 'myassigntour',
-            element: (<PrivateRoute><MyAssignedTours></MyAssignedTours></PrivateRoute>)
+            element: (<PrivateRoute>
+                {/* <GuideRoute> */}
+                <MyAssignedTours></MyAssignedTours>
+                {/* </GuideRoute> */}
+            </PrivateRoute>)
         },
         {
             path: 'add-package',
-            element: (<PrivateRoute><AddPackage></AddPackage></PrivateRoute>)
+            element: (<PrivateRoute>
+                {/* <AdminRoute> */}
+                <AddPackage></AddPackage>
+                {/* </AdminRoute> */}
+            </PrivateRoute>)
         },
         {
             path: 'manage-candidates',
-            element: (<PrivateRoute><ManageCandidates></ManageCandidates></PrivateRoute>)
+            element: (<PrivateRoute>
+                {/* <AdminRoute> */}
+                <ManageCandidates></ManageCandidates>
+                {/* </AdminRoute> */}
+            </PrivateRoute>)
         },
         {
             path: 'manage-users',
-            element: (<PrivateRoute><ManageUsers></ManageUsers></PrivateRoute>)
+            element: (<PrivateRoute>
+                {/* <AdminRoute> */}
+                <ManageUsers></ManageUsers>
+                {/* </AdminRoute> */}
+            </PrivateRoute>)
         }
         ]
     }

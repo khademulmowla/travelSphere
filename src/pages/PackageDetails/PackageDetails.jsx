@@ -45,13 +45,14 @@ const PackageDetails = () => {
             navigate('/login');
             return;
         }
-
+        // Find the selected guide's details
+        const selectedGuideDetails = tourGuides.find(guide => guide.name === selectedGuide);
         const bookingData = {
             packageId: id,
             packageName: trip.name,
             userName: user.displayName,
             userEmail: user.email,
-            guideEmail: trip.guide.email,
+            guideEmail: selectedGuideDetails?.email,
             price: trip.price,
             startDate,
             guide: selectedGuide,

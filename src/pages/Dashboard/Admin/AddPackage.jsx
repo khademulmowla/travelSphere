@@ -29,21 +29,14 @@ const AddPackage = () => {
             imageUrls.push(imageUrl);
         }
 
-        const guide = {
-            name: user?.displayName,
-            image: user?.photoURL,
-            email: user?.email,
-        }
-
         const plantData = {
-            name, category, price, images: imageUrls, guide
+            name, category, price, images: imageUrls
         }
         console.table(plantData)
 
         try {
             await axiosSecure.post('/packages', plantData)
             toast.success('Data Added Successfully!')
-            // navigate('/dashboard/my-inventory')
         } catch (err) {
             console.log(err)
         } finally {
