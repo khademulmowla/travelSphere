@@ -51,6 +51,7 @@ const PackageDetails = () => {
             packageName: trip.name,
             userName: user.displayName,
             userEmail: user.email,
+            guideEmail: trip.guide.email,
             price: trip.price,
             startDate,
             guide: selectedGuide,
