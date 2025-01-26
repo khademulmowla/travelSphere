@@ -29,15 +29,14 @@ const TouristBookingRow = ({ bookingData, refetch }) => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/books/${_id}`)
                     .then(res => {
-                        if (res.data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "The booking has been deleted.",
-                                icon: "success"
-                            });
+                        console.log(res.data)
 
-                        }
+                        refetch();
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "The booking has been deleted.",
+                            icon: "success"
+                        });
                     })
                     .catch(error => {
                         Swal.fire({
@@ -80,7 +79,7 @@ const TouristBookingRow = ({ bookingData, refetch }) => {
 
                 <button onClick={() => setIsOpen(true)} className="btn mr-2 hover:bg-green-400 hover:text-white"><FaAmazonPay className='text-2xl'></FaAmazonPay></button>
                 <button onClick={handleDelete} className="btn hover:bg-red-400 hover:text-white"><FaTrashAlt className='text-2xl'></FaTrashAlt></button>
-                <PurchaseModal closeModal={closeModal} isOpen={isOpen} refetch={refetch} />
+                <PurchaseModal bookingData={bookingData} closeModal={closeModal} isOpen={isOpen} refetch={refetch} />
             </td>
 
         </tr>
