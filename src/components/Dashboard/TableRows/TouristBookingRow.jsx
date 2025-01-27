@@ -49,12 +49,7 @@ const TouristBookingRow = ({ bookingData, refetch }) => {
             }
         });
     };
-    // // Handle Pay Function
-    // const handlePay = () => {
-    //     console.log('clicked')
-    //     setIsOpen(true); // Open the modal
-    //     console.log(isOpen)
-    // }
+
 
 
     return (
@@ -72,7 +67,13 @@ const TouristBookingRow = ({ bookingData, refetch }) => {
                 <p className='text-gray-900 whitespace-no-wrap'>{price}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>{status}</p>
+                <p className={`text-gray-900 whitespace-no-wrap px-2 py-1 rounded 
+        ${status === "pending" ? "bg-blue-300" :
+                        status === "in-review" ? "bg-yellow-300" :
+                            status === "Accepted" ? "bg-green-300" :
+                                status === "Rejected" ? "bg-red-300" : ""}`}>
+                    {status}
+                </p>
             </td>
 
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>

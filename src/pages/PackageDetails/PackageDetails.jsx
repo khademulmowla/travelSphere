@@ -11,9 +11,11 @@ import 'react-datepicker/dist/react-datepicker.css'
 import useAuth from '../../hooks/useAuth';
 import BookModal from '../../components/Shared/Modal/BookModal/BookModal';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const PackageDetails = () => {
     const navigate = useNavigate()
+    const axiosSecure = useAxiosSecure()
     const { id } = useParams()
     const { user } = useAuth()
     // let [isOpen, setIsOpen] = useState(false)
@@ -25,7 +27,7 @@ const PackageDetails = () => {
     const { data: trip = {}, isLoding, refetch } = useQuery({
         queryKey: ['trip', id],
         queryFn: async () => {
-            const { data } = await axios(`${import.meta.env.VITE_API_URL}/package/${id}`)
+            const { data } = await axiosSecure(`${import.meta.env.VITE_API_URL}/package/${id}`)
             return data
         }
     })

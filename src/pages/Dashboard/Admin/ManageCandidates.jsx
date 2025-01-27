@@ -20,7 +20,7 @@ const ManageCandidates = () => {
 
     if (isLoading) return <LoadingSpinner />;
 
-    // Accept Candidate -> Change Role to 'tour-guide' and Remove Application
+    // Accept Candidate
     const handleAccept = async (email, applicationId) => {
         try {
             // Update user role to 'tour-guide'

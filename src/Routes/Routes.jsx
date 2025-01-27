@@ -22,6 +22,7 @@ import EditStory from "../pages/EditStory/EditStory";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import GuideRoute from "./GuideRoute";
+import TourGuideProfile from "../pages/TourGuideProfile/TourGuideProfile";
 
 export const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             {
                 path: "/aboutus",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/guideprofile/:id",
+                element: <TourGuideProfile></TourGuideProfile>
             }
 
         ]
@@ -90,33 +95,33 @@ export const router = createBrowserRouter([
         {
             path: 'myassigntour',
             element: (<PrivateRoute>
-                {/* <GuideRoute> */}
-                <MyAssignedTours></MyAssignedTours>
-                {/* </GuideRoute> */}
+                <GuideRoute>
+                    <MyAssignedTours></MyAssignedTours>
+                </GuideRoute>
             </PrivateRoute>)
         },
         {
             path: 'add-package',
             element: (<PrivateRoute>
-                {/* <AdminRoute> */}
-                <AddPackage></AddPackage>
-                {/* </AdminRoute> */}
+                <AdminRoute>
+                    <AddPackage></AddPackage>
+                </AdminRoute>
             </PrivateRoute>)
         },
         {
             path: 'manage-candidates',
             element: (<PrivateRoute>
-                {/* <AdminRoute> */}
-                <ManageCandidates></ManageCandidates>
-                {/* </AdminRoute> */}
+                <AdminRoute>
+                    <ManageCandidates></ManageCandidates>
+                </AdminRoute>
             </PrivateRoute>)
         },
         {
             path: 'manage-users',
             element: (<PrivateRoute>
-                {/* <AdminRoute> */}
-                <ManageUsers></ManageUsers>
-                {/* </AdminRoute> */}
+                <AdminRoute>
+                    <ManageUsers></ManageUsers>
+                </AdminRoute>
             </PrivateRoute>)
         }
         ]

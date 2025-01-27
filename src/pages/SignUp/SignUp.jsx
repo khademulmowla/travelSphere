@@ -4,38 +4,76 @@ import useAuth from '../../hooks/useAuth'
 import { TbFidgetSpinner } from 'react-icons/tb'
 import { imageUpload, saveUser } from '../../api/utils'
 import toast from 'react-hot-toast'
+import { useState } from 'react'
 
 const SignUp = () => {
     const { createUser, updateUserProfile, googleSignIn, loading } = useAuth()
     const navigate = useNavigate()
+    const [errorMessage, setErrorMessage] = useState('');
+    const [success, setSuccess] = useState(false);
     // form submit handler
-    const handleSubmit = async event => {
-        event.preventDefault()
-        const form = event.target
-        const name = form.name.value
-        const email = form.email.value
-        const password = form.password.value
-        const image = form.image.files[0]
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSuccess(false);
+        setErrorMessage('');
 
-        //1. send image data to imgbb
-        const photoURL = await imageUpload(image)
+        const form = event.target;
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const password = form.password.value;
+        const image = form.image.files[0];
+
+        // Validation checks
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setErrorMessage('Please enter a valid email address.');
+            return;
+        }
+
+        if (password.length < 6) {
+            setErrorMessage('Password should be at least 6 characters long.');
+            return;
+        }
+
+        if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+            setErrorMessage('Password must contain at least one uppercase and one lowercase letter.');
+            return;
+        }
+
+        if (!/\d/.test(password)) {
+            setErrorMessage('Password must contain at least one number.');
+            return;
+        }
+
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            setErrorMessage('Password must contain at least one special character.');
+            return;
+        }
 
         try {
-            //2. User Registration
-            const result = await createUser(email, password)
+            // Upload image
+            const photoURL = await imageUpload(image);
 
-            //3. Save username & profile photo
-            await updateUserProfile(name, photoURL)
-            console.log(result)
-            await saveUser({ ...result?.user, displayName: name, photoURL })
+            // Create user
+            const result = await createUser(email, password);
 
-            navigate('/')
-            toast.success('Signup Successful')
+            // Update profile with name and photo
+            await updateUserProfile(name, photoURL);
+
+            // Save user data
+            await saveUser({ ...result?.user, displayName: name, photoURL });
+
+            navigate('/');
+            toast.success('Signup Successful');
+            setSuccess(true);
         } catch (err) {
-            console.log(err)
-            toast.error(err?.message)
+            console.log(err);
+            toast.error(err?.message);
+            setSuccess(false);
         }
-    }
+    };
+
 
     // Handle Google Signin
     const handleGoogleSignIn = async () => {
@@ -136,6 +174,12 @@ const SignUp = () => {
                         </button>
                     </div>
                 </form>
+                {
+                    errorMessage && <p className="text-red-500 text-center px-3 py-1">{errorMessage}</p>
+                }
+                {
+                    success && <p className="text-green-600 text-center">Successfully login</p>
+                }
                 <div className='flex items-center pt-4 space-x-1'>
                     <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                     <p className='px-3 text-sm dark:text-gray-400'>

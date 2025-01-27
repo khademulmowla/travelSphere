@@ -38,10 +38,10 @@ const Card = ({ trip }) => {
             '
                     ></div>
                 </div>
-                <div className='font-semibold text-lg'>{name}</div>
-                <div className='font-semibold text-lg'>Category: {category}</div>
+                <div className='font-semibold text-xl'>{name}</div>
+                <div className='text-lg'>Category: {category}</div>
                 <div className='flex flex-row items-center gap-1'>
-                    <div className='font-semibold'> Price: ${price}</div>
+                    <p> Price: ${price}</p>
                 </div>
             </div>
         </Link>

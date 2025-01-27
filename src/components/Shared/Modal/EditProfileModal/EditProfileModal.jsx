@@ -18,7 +18,6 @@ const EditProfileModal = ({ user, closeModal, role }) => {
         e.preventDefault();
         updateUserProfile(formData.displayName, formData.photoURL);
 
-
         try {
             const response = await axiosSecure.patch(`/update-user/${user.email}`, {
                 name: formData.displayName,

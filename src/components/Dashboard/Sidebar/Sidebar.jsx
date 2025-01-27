@@ -16,7 +16,7 @@ import MenuItem from './Menu/MenuItem'
 const Sidebar = () => {
     const { logOut } = useAuth()
     const [isActive, setActive] = useState(false)
-    // const [role, isLoading] = useRole()
+    const [role, isLoading] = useRole()
 
 
     // Sidebar Responsive Handler
@@ -73,18 +73,18 @@ const Sidebar = () => {
                     <div className='flex flex-col justify-between flex-1 mt-6'>
                         <nav>
                             {/*  Menu Items */}
-                            {/* {role === 'tourist' && <TouristMenu></TouristMenu>}
+                            {role === 'tourist' && <TouristMenu></TouristMenu>}
                             {role === 'guide' && <TourGuideMenu></TourGuideMenu>}
-                            {role === 'admin' && <AdminMenu></AdminMenu>} */}
-                            <TouristMenu />
-                            <TourGuideMenu />
+                            {role === 'admin' && <AdminMenu></AdminMenu>}
+                            {/* <TouristMenu /> */}
+                            {/* <TourGuideMenu /> */}
 
                             {/* <MenuItem
                                 icon={BsGraphUp}
                                 label='Statistics'
                                 address='/dashboard'
                             /> */}
-                            <AdminMenu />
+                            {/* <AdminMenu /> */}
                         </nav>
                     </div>
                 </div>

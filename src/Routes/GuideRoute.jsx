@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
 const GuideRoute = ({ children }) => {
     const [role, isLoading] = useRole()
     if (isLoading) return <LoadingSpinner />
-    if (role) return children
+    if (role === "guide") return children
     return <Navigate to='/login' replace='true' />
 }
 

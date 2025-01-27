@@ -15,7 +15,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                                 name='name'
                                 id='name'
                                 type='text'
-                                placeholder='Plant Name'
+                                placeholder='Trip Name'
                                 required
                             />
                         </div>
@@ -46,7 +46,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                                     name='price'
                                     id='price'
                                     type='number'
-                                    placeholder='Price per unit'
+                                    placeholder='Price for the trip'
                                     required
                                 />
                             </div>

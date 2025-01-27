@@ -26,7 +26,6 @@ const ManageUsers = () => {
             setDebouncedSearchTerm(searchTerm);
         }, 500); // Adjust the debounce delay as needed
 
-        // Cleanup function to clear the timeout if the user is typing again
         return () => clearTimeout(timer);
     }, [searchTerm]);
 
@@ -42,7 +41,7 @@ const ManageUsers = () => {
 
     // Handle the change in the search field
     const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value); // Set search term on each key press
+        setSearchTerm(e.target.value);
     };
 
     if (isLoading) return <LoadingSpinner />;
@@ -56,7 +55,7 @@ const ManageUsers = () => {
                     type="text"
                     placeholder="Search by Name or Email..."
                     className="input input-bordered w-72"
-                    onChange={handleSearchChange} // Handle input change
+                    onChange={handleSearchChange}
                 />
 
                 <Select

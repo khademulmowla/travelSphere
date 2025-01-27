@@ -30,8 +30,7 @@ const StoryCard = ({ story, handleDeleteItem }) => {
         group-hover:scale-110 
         transition
       '
-                        // src={image}
-                        // alt='Plant Image'
+
                         src={images && images.length > 0 ? images[0] : 'defaultImage.jpg'} // Check for images and use default if empty
                         alt="Package Image"
                     />

@@ -34,7 +34,7 @@ const AddStories = () => {
         try {
             await axiosSecure.post('/add-story', storiesData)
             toast.success('Data Added Successfully!')
-            // navigate('/dashboard/my-inventory')
+            // navigate('/dashboard/')
         } catch (err) {
             console.log(err)
         } finally {

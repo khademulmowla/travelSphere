@@ -37,13 +37,21 @@ const AssignedTourRow = ({ assignedTour, refetch, handleStatusChange }) => {
                 <p className='text-gray-900 whitespace-no-wrap'>{price}</p>
             </td>
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <p className='text-gray-900 whitespace-no-wrap'>{status}</p>
+                <p className={`text-gray-900 whitespace-no-wrap px-2 py-1 rounded 
+        ${status === "pending" ? "bg-blue-300" :
+                        status === "in-review" ? "bg-yellow-300" :
+                            status === "Accepted" ? "bg-green-300" :
+                                status === "Rejected" ? "bg-red-300" : ""}`}>
+                    {status}
+                </p>
             </td>
 
             <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                 <button
-                    className="btn mr-2 hover:bg-green-400 hover:text-white"
-                    onClick={handleAccept}>
+                    className={`btn mr-2 ${status === "pending" ? "bg-gray-300 cursor-not-allowed" : "hover:bg-green-400 hover:text-white"
+                        }`}
+                    onClick={handleAccept}
+                    disabled={status === "pending"}>
                     <FcAcceptDatabase className='text-2xl' /> Accept
                 </button>
                 <button
