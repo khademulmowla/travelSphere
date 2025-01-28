@@ -41,7 +41,7 @@ const OverView = () => {
                     to={'/aboutus'}
                     className="btn btn-outline border-0 border-b-4"
                 >
-                    Learn More
+                    See More
                 </Link>
             </div>
         </section>

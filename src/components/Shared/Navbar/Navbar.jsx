@@ -59,7 +59,7 @@ const Navbar = () => {
                                 <li className="mt-2">
                                     <button
                                         onClick={handleLogOut}
-                                        className="bg-gray-800 hover:bg-gray-500 block text-center"
+                                        className="bg-base-200 hover:bg-teal-50 block text-center outline border-0 border-b-4"
                                     >
                                         Logout
                                     </button>
