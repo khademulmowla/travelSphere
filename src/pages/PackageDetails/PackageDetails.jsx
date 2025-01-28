@@ -80,7 +80,7 @@ const PackageDetails = () => {
     return (
         <Container>
             <Helmet>
-                <title>Money Plant</title>
+                <title>TravelSphere | PackageDetails</title>
             </Helmet>
 
             {/* Image Section */}
@@ -155,7 +155,7 @@ const PackageDetails = () => {
             {/* booking form  */}
 
             <section className='p-6 bg-white rounded-md shadow-md'>
-                <h2 className='text-lg font-semibold text-gray-700'>Place A Bid</h2>
+                <h2 className='text-lg font-semibold text-gray-700'>Book Package</h2>
                 <form onSubmit={handleBooking}>
                     <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
                         <div>
