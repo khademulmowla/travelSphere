@@ -10,7 +10,7 @@ const ChooseUs = () => {
         <section className="py-12 w-11/12 mx-auto">
             <SectionTitle
                 subHeading={"Check it out"}
-                heading={"Find Your Desired Place"}
+                heading={"Find Your Desired Service"}
             ></SectionTitle>
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -29,15 +29,15 @@ const ChooseUs = () => {
                                 className="max-w-sm w-48 rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-blue-500 shadow-2xl" />
                         </div>
                         <motion.h1
-                            animate={{ x: 100 }}
+                            animate={{ x: 20 }}
                             transition={{ duration: 3, delay: 2, ease: "easeInOut", repeat: Infinity }}
-                            className="text-4xl font-bold my-4"><motion.span
+                            className="text-3xl font-bold my-4"><motion.span
                                 animate={{ color: ['#349f41', '#da56cc', '#077359'] }}
                                 transition={{ duration: 3, repeat: Infinity, delay: 2, ease: "easeInOut" }}
                             >Why Choose Us?</motion.span></motion.h1>
-                        {/* <p className="mt-4">
+                        <p className="mt-4">
                             Find out why we lead the travel document industry enabling travelers to fly with ease.
-                        </p> */}
+                        </p>
                         <p className="mt-4">
                             <Typewriter
                                 words={[

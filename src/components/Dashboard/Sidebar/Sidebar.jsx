@@ -13,6 +13,7 @@ import TouristMenu from './Menu/TouristMenu'
 import TourGuideMenu from './Menu/TourGuideMenu'
 import useRole from '../../../hooks/useRole'
 import MenuItem from './Menu/MenuItem'
+import { MdOutlineHistoryEdu, MdOutlineManageHistory } from 'react-icons/md'
 const Sidebar = () => {
     const { logOut } = useAuth()
     const [isActive, setActive] = useState(false)
@@ -31,7 +32,6 @@ const Sidebar = () => {
                     <div className='block cursor-pointer p-4 font-bold'>
                         <Link to='/'>
                             <img
-                                // className='hidden md:block'
                                 src='https://i.ibb.co/4ZXzmq5/logo.png'
                                 alt='logo'
                                 width='100'
@@ -56,54 +56,42 @@ const Sidebar = () => {
             >
                 <div>
                     <div>
-                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-lime-100 mx-auto'>
+                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gray-300 mx-auto'>
                             <Link to='/'>
                                 <img
                                     // className='hidden md:block'
                                     src={logo}
                                     alt='logo'
-                                    width='100'
-                                    height='100'
+                                    width='60'
+                                    height='60'
                                 />
                             </Link>
                         </div>
                     </div>
-
                     {/* Nav Items */}
                     <div className='flex flex-col justify-between flex-1 mt-6'>
                         <nav>
-                            {/*  Menu Items */}
                             {role === 'tourist' && <TouristMenu></TouristMenu>}
                             {role === 'guide' && <TourGuideMenu></TourGuideMenu>}
                             {role === 'admin' && <AdminMenu></AdminMenu>}
-                            {/* <TouristMenu /> */}
-                            {/* <TourGuideMenu /> */}
-
-                            {/* <MenuItem
-                                icon={BsGraphUp}
-                                label='Statistics'
-                                address='/dashboard'
-                            /> */}
-                            {/* <AdminMenu /> */}
                         </nav>
                     </div>
                 </div>
 
                 <div>
                     <hr />
-
                     <MenuItem
                         icon={FcSettings}
                         label='Profile'
                         address='/dashboard/profile'
                     />
                     <MenuItem
-                        icon={FcSettings}
+                        icon={MdOutlineHistoryEdu}
                         label="Add Story"
                         address='/dashboard/add-story'
                     />
                     <MenuItem
-                        icon={FcSettings}
+                        icon={MdOutlineManageHistory}
                         label="Manage Story"
                         address='/dashboard/manage-story'
                     />

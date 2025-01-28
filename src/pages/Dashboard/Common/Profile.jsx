@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import useAuth from "../../../hooks/useAuth";
 import useRole from "../../../hooks/useRole";
-// import coverImg from '../../../assets/images/cover.jpg';
+import coverImg from '../../../assets/images/cover.jpg';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EditProfileModal from "../../../components/Shared/Modal/EditProfileModal/EditProfileModal";
@@ -24,7 +24,7 @@ const Profile = () => {
             <div className='bg-white shadow-lg rounded-2xl md:w-4/5 lg:w-3/5'>
                 <img
                     alt='cover photo'
-                    src=""
+                    src={coverImg}
                     className='w-full mb-4 rounded-t-lg h-56'
                 />
                 <div className='flex flex-col items-center justify-center p-4 -mt-16'>
@@ -46,14 +46,14 @@ const Profile = () => {
                                 <span className='font-bold text-black'>{user.email}</span>
                             </p>
                             <button
-                                className='bg-lime-500 px-10 py-1 rounded-lg text-black cursor-pointer hover:bg-lime-800'
+                                className="btn btn-sm btn-outline border-0 border-b-4"
                                 onClick={() => setIsModalOpen(true)}>
                                 Edit Profile
                             </button>
                         </div>
                         {role === "tourist" && (
                             <button
-                                className='mt-4 bg-blue-500 px-6 py-2 text-white rounded-lg hover:bg-blue-700'
+                                className="btn btn-sm btn-outline border-0 border-b-4 mt-2"
                                 onClick={() => navigate("/dashboard/join-guide")}
                             >
                                 Apply For Tour Guide

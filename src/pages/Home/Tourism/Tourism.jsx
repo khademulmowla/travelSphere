@@ -88,10 +88,7 @@ const Tourism = () => {
                                     <img src={guide.image} alt={guide.name} className="w-full h-48 object-cover rounded-lg" />
                                     <h3 className="text-xl font-bold">{guide.name}</h3>
                                     <p>{guide.experience} years of experience</p>
-                                    <Link to={`/guideprofile/${guide._id}`}>
-                                        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
-                                            Details
-                                        </button>
+                                    <Link to={`/guideprofile/${guide._id}`} className="btn btn-outline border-0 border-b-4">Details
                                     </Link>
                                 </div>
                             ))}

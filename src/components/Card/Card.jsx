@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 const Card = ({ trip }) => {
     const { name, category, price, images, _id } = trip || {}
     return (
-        <Link
-            to={`/package/${_id}`}
+        <div
             className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl'
         >
             <div className='flex flex-col gap-2 w-full'>
@@ -43,8 +42,11 @@ const Card = ({ trip }) => {
                 <div className='flex flex-row items-center gap-1'>
                     <p> Price: ${price}</p>
                 </div>
+                <Link to={`/package/${_id}`} className="btn btn-outline border-0 border-b-4">
+                    View Package
+                </Link>
             </div>
-        </Link>
+        </div>
     );
 };
 

@@ -63,7 +63,7 @@ const PackageDetails = () => {
         console.log(bookingData)
 
         try {
-            await axios.post(`${import.meta.env.VITE_API_URL}/books`, bookingData);
+            await axiosSecure.post(`${import.meta.env.VITE_API_URL}/books`, bookingData);
             setModalOpen(true);
             toast.success('Booking successfully')
         } catch (error) {
@@ -90,7 +90,7 @@ const PackageDetails = () => {
                     <div className="lg:w-2/3 h-[500px] overflow-hidden rounded-xl">
                         <img
                             className="object-cover w-full h-full"
-                            src={images[0]} // First image on the left
+                            src={images[0]}
                             alt={`Image 1`}
                         />
                     </div>
@@ -104,7 +104,7 @@ const PackageDetails = () => {
                         <div className="h-[245px] overflow-hidden rounded-xl">
                             <img
                                 className="object-cover w-full h-full"
-                                src={images[1]} // Second image on the top right
+                                src={images[1]}
                                 alt={`Image 2`}
                             />
                         </div>
@@ -113,7 +113,7 @@ const PackageDetails = () => {
                         <div className="h-[245px] overflow-hidden rounded-xl">
                             <img
                                 className="object-cover w-full h-full"
-                                src={images[2]} // Third image on the bottom right
+                                src={images[2]}
                                 alt={`Image 3`}
                             />
                         </div>
@@ -133,7 +133,7 @@ const PackageDetails = () => {
                                 <h3 className="text-lg font-semibold text-center mt-2">{guide.name}</h3>
                                 <p className="text-gray-500 text-center">{guide.email}</p>
                                 <button
-                                    onClick={() => navigate(`/guide/${guide._id}`)}
+                                    onClick={() => navigate(`/guideprofile/${guide._id}`)}
                                     className="mt-3 block w-full text-center text-white bg-blue-500 py-2 rounded-lg hover:bg-blue-600"
                                 >
                                     View Profile

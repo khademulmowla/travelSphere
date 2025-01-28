@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const OverView = () => {
     return (
@@ -36,12 +37,12 @@ const OverView = () => {
                         allowFullScreen
                     ></iframe>
                 </div>
-                <a
-                    href="#"
-                    className="inline-block bg-gray-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-teal-700 transition duration-300"
+                <Link
+                    to={'/aboutus'}
+                    className="btn btn-outline border-0 border-b-4"
                 >
                     Learn More
-                </a>
+                </Link>
             </div>
         </section>
     );

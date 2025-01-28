@@ -52,13 +52,10 @@ const SignUp = () => {
         }
 
         try {
-            // Upload image
             const photoURL = await imageUpload(image);
 
-            // Create user
             const result = await createUser(email, password);
 
-            // Update profile with name and photo
             await updateUserProfile(name, photoURL);
 
             // Save user data
@@ -78,7 +75,6 @@ const SignUp = () => {
     // Handle Google Signin
     const handleGoogleSignIn = async () => {
         try {
-            //User Registration using google
             const data = await googleSignIn()
             await saveUser(data?.user)
 

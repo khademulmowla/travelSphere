@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
             <footer className="footer bg-neutral text-neutral-content p-10">
                 <aside>
-                    <img className='w-auto h-7' src={logo} alt='' />
+                    <img className='w-auto h-7 bg-base-200' src={logo} alt='' />
                     <p>
                         <span className='text-lg font-bold'>
                             TravelSphere

@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet-async";
+
 const AboutUs = () => {
     return (
         <div className="min-h-screen flex items-center justify-center px-4 bg-gray-100">
+            <Helmet>
+                <title>
+                    TravelSphere | About Us
+                </title>
+            </Helmet>
             <div className="max-w-3xl w-full bg-white shadow-lg rounded-2xl p-6 md:p-10">
-                <h3 className="text-3xl font-bold text-center text-gray-800 mb-6">About Us</h3>
-
+                <h3 className="text-3xl font-bold text-center text-gray-800 mb-6">Welcome!</h3>
                 <p className="text-gray-700 text-lg text-center mb-4">
                     Hello! I'm a passionate <span className="font-semibold">Web Developer</span>. My journey into <span className="font-semibold">web development</span> started out of curiosity, and now, it has become my passion.
                 </p>

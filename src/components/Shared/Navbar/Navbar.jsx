@@ -14,78 +14,95 @@ const Navbar = () => {
             console.error('Error during logout:', error);
         }
     };
+
     return (
-        <div className='navbar bg-[#c1ac28] text-white shadow-sm container px-4 mx-auto'>
-            <div className='flex-1'>
-                <Link to='/' className='flex gap-2 items-center'>
-                    <img className='w-auto h-7' src={logo} alt='' />
-                    <span className='font-bold'>TravelSphere</span>
+        <div className="navbar bg-base-300 shadow-sm px-4 mx-auto">
+            <div className="flex justify-between items-center w-full">
+                <Link to="/" className="flex gap-2 items-center">
+                    <img className="w-auto h-7" src={logo} alt="" />
+                    <span className="font-bold">TravelSphere</span>
                 </Link>
-            </div>
-            <div className='flex-none'>
-                <ul className='menu menu-horizontal px-1'>
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/trips'>Trips</Link>
-                    </li>
-                    <li>
-                        <Link to='/community'>Community</Link>
-                    </li>
-                    <li>
-                        <Link to='/aboutus'>About Us</Link>
-                    </li>
 
-                    {!user && (
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                    )}
-                </ul>
+                <div className="lg:flex hidden items-center space-x-4">
+                    <ul className="menu menu-horizontal px-1 font-semibold">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/trips">Trips</Link></li>
+                        <li><Link to="/community">Community</Link></li>
+                        <li><Link to="/aboutus">About Us</Link></li>
+                        {!user && <li><Link to="/login">Login</Link></li>}
+                    </ul>
 
-                {user && (
-                    <div className='dropdown dropdown-end z-50'>
-                        <div
-                            tabIndex={0}
-                            role='button'
-                            className='btn btn-ghost btn-circle avatar'
-                        >
-                            <div title={user?.displayName} className='w-10 rounded-full'>
-                                <img
-                                    referrerPolicy='no-referrer'
-                                    alt='User Profile Photo'
-                                    src={user?.photoURL}
-                                />
+                    {user && (
+                        <div className="dropdown dropdown-end z-50">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="btn btn-ghost btn-circle avatar"
+                            >
+                                <div title={user?.displayName} className="w-10 rounded-full">
+                                    <img
+                                        referrerPolicy="no-referrer"
+                                        alt="User Profile Photo"
+                                        src={user?.photoURL}
+                                    />
+                                </div>
                             </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
+                            >
+                                <li><Link to="/dashboard">Dashboard</Link></li>
+                                <div className="text-start">
+                                    <h3 className="block">{user?.displayName || 'N/A'}</h3>
+                                    <h3 className="block">{user?.email || 'N/A'}</h3>
+                                </div>
+                                <li className="mt-2">
+                                    <button
+                                        onClick={handleLogOut}
+                                        className="bg-gray-800 hover:bg-gray-500 block text-center"
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
+                    )}
+                </div>
+
+                {/* Mobile menu */}
+                <div className="lg:hidden flex items-center">
+                    <div className="dropdown dropdown-end z-50">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        </label>
                         <ul
                             tabIndex={0}
-                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#c1ac28] rounded-box w-52'
+                            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#c1ac28] rounded-box w-52"
                         >
-
-                            <li>
-                                <Link to='/dashboard'>Dashboard</Link>
-                            </li>
-                            <div className='text-white text-start'>
-                                <h3 className='block'>
-                                    {user?.displayName || 'N/A'}
-                                </h3>
-                                <h3 className='block'>
-                                    {user?.email || 'N/A'}
-                                </h3>
-                            </div>
-                            <li className='mt-2'>
-                                <button
-                                    onClick={handleLogOut}
-                                    className='bg-gray-800 hover:bg-gray-500 block text-center'
-                                >
-                                    Logout
-                                </button>
-                            </li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/trips">Trips</Link></li>
+                            <li><Link to="/community">Community</Link></li>
+                            <li><Link to="/aboutus">About Us</Link></li>
+                            {!user && <li><Link to="/login">Login</Link></li>}
+                            {user && (
+                                <li><Link to="/dashboard">Dashboard</Link></li>
+                            )}
                         </ul>
                     </div>
-                )}
+                </div>
             </div>
         </div>
     );
