@@ -51,7 +51,7 @@ const Navbar = () => {
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
                             >
-                                <li><Link to="/dashboard">Dashboard</Link></li>
+                                <li><Link to="/dashboard" className='font-semibold'>Dashboard</Link></li>
                                 <div className="text-start">
                                     <h3 className="block">{user?.displayName || 'N/A'}</h3>
                                     <h3 className="block">{user?.email || 'N/A'}</h3>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                 <li className="mt-2">
                                     <button
                                         onClick={handleLogOut}
-                                        className="bg-base-200 hover:bg-teal-50 block text-center outline border-0 border-b-4"
+                                        className="bg-base-200 font-semibold hover:bg-blue-500 block text-center"
                                     >
                                         Logout
                                     </button>
