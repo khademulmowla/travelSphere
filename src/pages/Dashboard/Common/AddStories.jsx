@@ -44,7 +44,7 @@ const AddStories = () => {
     return (
         <div>
             <Helmet>
-                <title>TravelSphere | AddPackage</title>
+                <title>TravelSphere | Add Story</title>
             </Helmet>
             <AddStoryForm handleSubmit={handleSubmit} uploadImage={uploadImage} setUploadImage={setUploadImage} loading={loading}></AddStoryForm>
 

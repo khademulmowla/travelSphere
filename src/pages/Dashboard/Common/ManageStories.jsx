@@ -5,6 +5,7 @@ import StoryCard from "../../../components/StoryCard/StoryCard";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 // import axios from "axios";
 
 const ManageStories = () => {
@@ -53,6 +54,9 @@ const ManageStories = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>TravelSphere | Manage Story</title>
+            </Helmet>
             {
                 stories && stories.length > 0 ? <div className='pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                     {

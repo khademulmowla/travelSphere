@@ -4,6 +4,7 @@ import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import Select from "react-select";
+import { Helmet } from "react-helmet-async";
 
 const roleOptions = [
     { value: "", label: "All Roles" },
@@ -48,6 +49,9 @@ const ManageUsers = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>TravelSphere | Manage Users</title>
+            </Helmet>
             <div className='flex justify-between my-4 items-center'>
                 <h2 className='text-3xl'>All Users: {users.length}</h2>
 

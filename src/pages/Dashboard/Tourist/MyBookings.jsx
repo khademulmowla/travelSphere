@@ -19,7 +19,7 @@ const MyBookings = () => {
     return (
         <>
             <Helmet>
-                <title>My Bookings</title>
+                <title>TravelSphere | My Bookings</title>
             </Helmet>
             <div className='container mx-auto px-4 sm:px-8'>
                 <div className='py-8'>

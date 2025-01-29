@@ -5,6 +5,7 @@ import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import { FcAcceptDatabase } from "react-icons/fc";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ManageCandidates = () => {
     const { user } = useAuth();
@@ -51,6 +52,9 @@ const ManageCandidates = () => {
 
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>TravelSphere | Manage Candidates</title>
+            </Helmet>
             <table className="table w-full table-zebra">
                 <thead>
                     <tr>
