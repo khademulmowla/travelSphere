@@ -56,8 +56,8 @@ TravelSphere is a comprehensive travel management web application that connects 
 
 # How to Run the Project Locally
 Clone the Repository:
-* git clone https://github.com/yourusername/assignment-11.git
-* cd assignment-11
+* git clone https://github.com/yourusername/travelsphere.git
+* cd cd travelsphere
 ---
 Install Dependencies:
  - Ensure you have Node.js installed. Then, run:
