@@ -5,7 +5,9 @@ import Footer from '../components/Shared/Footer/Footer';
 const MainLayout = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <div className='sticky top-0 z-50 opacity-90'>
+                <Navbar></Navbar>
+            </div>
             <div className=''>
                 <Outlet></Outlet>
             </div>

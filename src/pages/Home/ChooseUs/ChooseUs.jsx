@@ -1,8 +1,8 @@
-import team1 from '../../../assets/images/con1.png'
-import team2 from '../../../assets/images/con2.png'
-import { motion } from "framer-motion"
+import team1 from '../../../assets/images/choose us.png'
+// import team2 from '../../../assets/images/con2.png'
+// import { motion } from "framer-motion"
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import { Typewriter } from 'react-simple-typewriter';
+// import { Typewriter } from 'react-simple-typewriter';
 
 
 const ChooseUs = () => {
@@ -17,39 +17,15 @@ const ChooseUs = () => {
 
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
                         <div className='flex-1'>
-                            <motion.img
+                            <img
                                 src={team1}
-                                animate={{ y: [50, 100, 50] }}
-                                transition={{ duration: 10, repeat: Infinity }}
-                                className="max-w-sm w-48 rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-blue-500 shadow-2xl" />
-                            <motion.img
-                                src={team2}
-                                animate={{ x: [100, 150, 100] }}
-                                transition={{ duration: 10, delay: 5, repeat: Infinity }}
-                                className="max-w-sm w-48 rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-blue-500 shadow-2xl" />
+                                className="max-w-sm w-48 md:w-full rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-blue-500 shadow-2xl mx-auto lg:mx-0"
+                            />
+
                         </div>
-                        <motion.h1
-                            animate={{ x: 20 }}
-                            transition={{ duration: 3, delay: 2, ease: "easeInOut", repeat: Infinity }}
-                            className="text-3xl font-bold my-4"><motion.span
-                                animate={{ color: ['#349f41', '#da56cc', '#077359'] }}
-                                transition={{ duration: 3, repeat: Infinity, delay: 2, ease: "easeInOut" }}
-                            >Why Choose Us?</motion.span></motion.h1>
+                        <h1 className="text-3xl font-bold my-4">Why choose us?</h1>
                         <p className="mt-4">
                             Find out why we lead the travel document industry enabling travelers to fly with ease.
-                        </p>
-                        <p className="mt-4">
-                            <Typewriter
-                                words={[
-                                    "Find out why we lead the travel document fly with ease."
-                                ]}
-                                loop={0}
-                                cursor
-                                cursorStyle="|"
-                                typeSpeed={70}
-                                deleteSpeed={50}
-                                delaySpeed={2000}
-                            />
                         </p>
                         <button className="btn bg-black text-white mt-2 px-6 py-2 rounded-full">
                             Apply Now →

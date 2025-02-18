@@ -5,6 +5,7 @@ import Featured from "./Featured/Featured";
 import OverView from "./OverView/OverView";
 import Tourism from "./Tourism/Tourism";
 import TouristStory from "./TouristStory/TouristStory";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <TouristStory></TouristStory>
             <Featured></Featured>
             <ChooseUs></ChooseUs>
+            <Testimonial></Testimonial>
 
         </div>
     );

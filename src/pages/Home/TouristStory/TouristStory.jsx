@@ -17,7 +17,7 @@ const TouristStory = () => {
     if (isLoading) return <LoadingSpinner />;
 
     return (
-        <div className="pt-12">
+        <div className="pt-12 px-6">
             <div className="w-1/2 mx-auto py-2">
                 <h2 className="text-3xl font-bold text-center">
                     <Typewriter
