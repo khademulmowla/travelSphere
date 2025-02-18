@@ -29,7 +29,7 @@ const Tourism = () => {
     });
 
     return (
-        <div className="container mx-auto py-12 px-8">
+        <div className="container mx-auto py-8 px-8">
             <SectionTitle
                 subHeading={"Every journey begins with a single step"}
                 heading={"Travel Tale"}

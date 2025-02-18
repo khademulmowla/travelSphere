@@ -17,7 +17,7 @@ const Testimonial = () => {
 
     }, [])
     return (
-        <section>
+        <section className='py-8'>
             <SectionTitle
                 subHeading={"What Travellers Say"}
                 heading={"Testimonial"}

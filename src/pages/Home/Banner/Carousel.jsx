@@ -11,7 +11,7 @@ import bgimg2 from '../../../assets/images/carousel2.jpeg'
 import bgimg3 from '../../../assets/images/carousel3.jpg'
 const Carousel = () => {
     return (
-        <div className='container py-2 mx-auto'>
+        <div className='container pb-8 mx-auto'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}

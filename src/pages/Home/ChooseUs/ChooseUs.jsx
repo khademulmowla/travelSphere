@@ -1,13 +1,11 @@
 import team1 from '../../../assets/images/choose us.png'
-// import team2 from '../../../assets/images/con2.png'
-// import { motion } from "framer-motion"
+
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-// import { Typewriter } from 'react-simple-typewriter';
 
 
 const ChooseUs = () => {
     return (
-        <section className="py-12 px-8">
+        <section className="py-8 px-8">
             <SectionTitle
                 subHeading={"Check it out"}
                 heading={"Find Your Desired Service"}

@@ -3,7 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Stat = () => {
     return (
-        <div className='px-8 py-12'>
+        <div className='px-8 py-8'>
             <SectionTitle
                 subHeading={"Transforming Dreams into Journeys"}
                 heading={"Travel Legacy"}
