@@ -1,28 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const OverView = () => {
     return (
-        <section className="bg-gray-100 py-12 px-6 sm:px-12 md:px-24">
+        <section className="bg-gray-100 py-12 px-8 ">
+            <SectionTitle
+                subHeading={"Check it out"}
+                heading={"Overview"}
+            ></SectionTitle>
             <div className="container mx-auto text-center">
-                <motion.h2
-                    className="text-3xl font-bold text-gray-800 mb-6"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 3 }}
-                >
-                    Overview of Our TravelSphere
-                </motion.h2>
-                <motion.p
-                    className="text-lg text-gray-600 mb-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 3, delay: 0.6 }}
-                >
-                    Discover the best travel experiences. From famous landmarks to hidden gems, explore all
-                    that our platform has to offer.
-                </motion.p>
                 <div className="flex justify-center mb-6">
                     {/* YouTube Video Embed */}
                     <iframe

@@ -19,7 +19,7 @@ const Testimonial = () => {
     return (
         <section>
             <SectionTitle
-                subHeading={"What Our Client Say"}
+                subHeading={"What Travellers Say"}
                 heading={"Testimonial"}
             ></SectionTitle>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">

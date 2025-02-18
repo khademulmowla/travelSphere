@@ -17,8 +17,8 @@ const TouristStory = () => {
     if (isLoading) return <LoadingSpinner />;
 
     return (
-        <div className="pt-12 px-6">
-            <div className="w-1/2 mx-auto py-2">
+        <div className="py-12 px-8">
+            <div className="w-1/2 mx-auto">
                 <h2 className="text-3xl font-bold text-center">
                     <Typewriter
                         words={['Shared Stories']}

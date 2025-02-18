@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const TravelBlogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -11,15 +12,12 @@ const TravelBlogs = () => {
     }, []);
 
     return (
-        <section className="py-16 bg-gray-100">
-            <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-8">
-                    Latest <span className="text-blue-600">Travel Blogs & Tips</span>
-                </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-                    Stay updated with expert travel tips, destination guides, and budget hacks to make your journey smooth and memorable.
-                </p>
-
+        <section>
+            <SectionTitle
+                subHeading={"Check Latest Blogs"}
+                heading={"Travel Blogs"}
+            ></SectionTitle>
+            <div className="container mx-auto px-8 text-center py-16 bg-gray-100">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog) => (
                         <div

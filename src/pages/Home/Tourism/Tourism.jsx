@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import Card from "../../../components/Card/Card";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const fetchPackages = async () => {
     const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/random-packages`);
@@ -28,34 +29,11 @@ const Tourism = () => {
     });
 
     return (
-        <div className="container mx-auto py-8 px-6">
-            <div className="w-1/2 mx-auto py-2">
-                <h2 className="text-3xl font-bold text-center">
-                    <Typewriter
-                        words={['Travel Tale']}
-                        loop={0}
-                        cursor
-                        cursorStyle="_"
-                        typeSpeed={100}
-                        deleteSpeed={70}
-                        delaySpeed={1500}
-                    />
-                </h2>
-                <p className="text-center text-gray-700">
-                    <Typewriter
-                        words={[
-                            'Every journey begins with a single step',
-                            '—let us make it extraordinary!',
-                        ]}
-                        loop={0}
-                        cursor
-                        cursorStyle="|"
-                        typeSpeed={70}
-                        deleteSpeed={50}
-                        delaySpeed={2000}
-                    />
-                </p>
-            </div>
+        <div className="container mx-auto py-12 px-8">
+            <SectionTitle
+                subHeading={"Every journey begins with a single step"}
+                heading={"Travel Tale"}
+            ></SectionTitle>
             <Tabs>
                 <TabList>
                     <Tab>Our Packages</Tab>

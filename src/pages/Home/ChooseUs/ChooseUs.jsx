@@ -7,12 +7,12 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const ChooseUs = () => {
     return (
-        <section className="py-12 w-11/12 mx-auto">
+        <section className="py-12 px-8">
             <SectionTitle
                 subHeading={"Check it out"}
                 heading={"Find Your Desired Service"}
             ></SectionTitle>
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
 
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
