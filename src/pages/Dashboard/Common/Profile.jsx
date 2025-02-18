@@ -9,6 +9,7 @@ import EditProfileModal from "../../../components/Shared/Modal/EditProfileModal/
 
 const Profile = () => {
     const { user, loading } = useAuth();
+    console.log(user)
     const [role, isRoleLoading] = useRole();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();

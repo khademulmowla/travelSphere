@@ -3,10 +3,10 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Stat = () => {
     return (
-        <div className='px-8 py-8'>
+        <div className='px-8 py-12'>
             <SectionTitle
-                subHeading={"Transforming Dreams into Journeys"}
-                heading={"Travel Legacy"}
+                subHeading={"Transforming Dreams into Journey"}
+                heading={"Travel Tale"}
             ></SectionTitle>
             {/* Horizontal line at the top */}
             <hr className="border-t-2 border-gray-200 mb-12" />

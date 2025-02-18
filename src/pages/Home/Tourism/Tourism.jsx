@@ -4,7 +4,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Card from "../../../components/Card/Card";
 import { Link } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const fetchPackages = async () => {

@@ -3,7 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const OverView = () => {
     return (
-        <section className="bg-gray-100 py-12 px-8 ">
+        <section className="py-12 px-8 ">
             <SectionTitle
                 subHeading={"Check it out"}
                 heading={"Overview"}
