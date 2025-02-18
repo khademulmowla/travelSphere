@@ -6,6 +6,7 @@ import OverView from "./OverView/OverView";
 import Tourism from "./Tourism/Tourism";
 import TouristStory from "./TouristStory/TouristStory";
 import Testimonial from "./Testimonial/Testimonial";
+import TravelBlogs from "./TravelBlog/TravelBlogs";
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <Featured></Featured>
             <ChooseUs></ChooseUs>
             <Testimonial></Testimonial>
+            <TravelBlogs></TravelBlogs>
 
         </div>
     );
