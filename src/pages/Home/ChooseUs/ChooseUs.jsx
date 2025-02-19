@@ -32,7 +32,7 @@ const ChooseUs = () => {
                     </div>
 
                     <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="bg-teal-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="bg-base-100 p-8 rounded-lg shadow-md text-center">
                             <div className="mb-4">
                                 <i className="fas fa-clock text-4xl text-black"></i>
                             </div>
@@ -41,7 +41,7 @@ const ChooseUs = () => {
                                 Enjoy a far simpler process than dealing with foreign governments.
                             </p>
                         </div>
-                        <div className="bg-blue-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="bg-base-300 p-8 rounded-lg shadow-md text-center">
                             <div className="mb-4">
                                 <i className="fas fa-shield-alt text-4xl text-black"></i>
                             </div>
@@ -50,7 +50,7 @@ const ChooseUs = () => {
                                 All your information is always protected with best-in-class security.
                             </p>
                         </div>
-                        <div className="bg-blue-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="bg-base-300 p-8 rounded-lg shadow-md text-center">
                             <div className="mb-4">
                                 <i className="fas fa-file-alt text-4xl text-black"></i>
                             </div>
@@ -59,7 +59,7 @@ const ChooseUs = () => {
                                 We have a 98% visa approval rate. Our team is committed to your success!
                             </p>
                         </div>
-                        <div className="bg-teal-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="bg-base-100 p-8 rounded-lg shadow-md text-center">
                             <div className="mb-4">
                                 <i className="fas fa-question-circle text-4xl text-black"></i>
                             </div>
