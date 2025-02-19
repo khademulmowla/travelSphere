@@ -4,7 +4,7 @@ const Card = ({ trip }) => {
     const { name, category, price, images, _id } = trip || {}
     return (
         <div
-            className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl'
+            className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl dark:bg-gray-700 dark:text-white'
         >
             <div className='flex flex-col gap-2 w-full'>
                 <div
@@ -37,12 +37,12 @@ const Card = ({ trip }) => {
             '
                     ></div>
                 </div>
-                <div className='font-semibold text-xl'>{name}</div>
-                <div className='text-lg'>Category: {category}</div>
-                <div className='flex flex-row items-center gap-1'>
+                <div className='font-semibold text-xl dark:text-gray-200'>{name}</div>
+                <div className='text-lg dark:text-gray-200'>Category: {category}</div>
+                <div className='flex flex-row items-center gap-1 dark:text-gray-200'>
                     <p> Price: ${price}</p>
                 </div>
-                <Link to={`/package/${_id}`} className="btn btn-outline border-0 border-b-4">
+                <Link to={`/package/${_id}`} className="btn btn-outline border-0 border-b-4 dark:border-b-gray-200 dark:text-white">
                     View Package
                 </Link>
             </div>

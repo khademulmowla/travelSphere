@@ -61,11 +61,11 @@ const Tourism = () => {
                     ) : guides.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
                             {guides.map((guide) => (
-                                <div key={guide._id} className="shadow-lg p-4 rounded-lg">
+                                <div key={guide._id} className="shadow-lg p-4 rounded-lg dark:bg-gray-700 dark:text-white">
                                     <img src={guide.image} alt={guide.name} className="w-full h-48 object-cover rounded-lg" />
-                                    <h3 className="text-xl font-bold">{guide.name}</h3>
-                                    <p>{guide.experience} years of experience</p>
-                                    <Link to={`/guideprofile/${guide._id}`} className="btn btn-outline border-0 border-b-4">Details
+                                    <h3 className="text-xl font-bold dark:text-gray-200">{guide.name}</h3>
+                                    <p className="dark:text-gray-200">{guide.experience} years of experience</p>
+                                    <Link to={`/guideprofile/${guide._id}`} className="btn mt-2 btn-outline border-0 border-b-4 dark:border-b-gray-200 dark:text-white">Details
                                     </Link>
                                 </div>
                             ))}

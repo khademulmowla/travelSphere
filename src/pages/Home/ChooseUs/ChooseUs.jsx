@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import team1 from '../../../assets/images/choose us.png'
 
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
@@ -17,7 +18,7 @@ const ChooseUs = () => {
                         <div className='flex-1'>
                             <img
                                 src={team1}
-                                className="max-w-sm w-48 md:w-full rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-blue-500 shadow-2xl mx-auto lg:mx-0"
+                                className="max-w-sm w-48 md:w-full rounded-t-[40px] rounded-br-[40px] border-b-4 border-l-4 border-gray-700 shadow-2xl mx-auto lg:mx-0"
                             />
 
                         </div>
@@ -25,9 +26,9 @@ const ChooseUs = () => {
                         <p className="mt-4">
                             Find out why we lead the travel document industry enabling travelers to fly with ease.
                         </p>
-                        <button className="btn bg-black text-white mt-2 px-6 py-2 rounded-full">
-                            Apply Now →
-                        </button>
+                        <Link to='/trips' className="btn btn-outline border-0 border-b-4 dark:border-b-white dark:hover:bg-gray-500 dark:text-white">
+                            Find Trips →
+                        </Link>
                     </div>
 
                     <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">

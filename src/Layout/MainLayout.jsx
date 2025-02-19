@@ -4,15 +4,14 @@ import Footer from '../components/Shared/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
-            <div className='sticky top-0 z-50 opacity-90'>
-                <Navbar></Navbar>
+        <div className="dark:bg-gray-900 dark:text-white">
+            <div className="sticky top-0 z-50 opacity-90">
+                <Navbar />
             </div>
-            <div className=''>
-                <Outlet></Outlet>
+            <div>
+                <Outlet />
             </div>
-            <Footer></Footer>
-
+            <Footer />
         </div>
     );
 };

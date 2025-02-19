@@ -25,7 +25,7 @@ const OverView = () => {
                 </div>
                 <Link
                     to={'/aboutus'}
-                    className="btn btn-outline border-0 border-b-4"
+                    className="btn btn-outline border-0 border-b-4 dark:border-b-gray-200 dark:text-white"
                 >
                     See More
                 </Link>

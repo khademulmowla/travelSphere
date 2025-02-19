@@ -33,7 +33,7 @@ const TouristStory = () => {
             <div className="text-center mt-6">
                 <button
                     onClick={() => navigate('/community')}
-                    className="btn btn-outline border-0 border-b-4 border-t-4"
+                    className="btn btn-outline border-0 border-b-4 border-t-4 dark:border-b-gray-300 dark:border-t-gray-300 text-white"
                 >
                     All Stories
                 </button>

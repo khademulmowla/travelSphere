@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import featuredImg from '../../../assets/images/featured.jpg'
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import './Featured.css'
@@ -16,7 +17,7 @@ const Featured = () => {
                 <div className='md:ml-10 space-y-1'>
                     <p className='uppercase font-semibold'>How can I get?</p>
                     <p className='w-full'>Discover the world with us! Whether you are seeking adventure, relaxation, or cultural immersion, we curate unforgettable travel experiences tailored to your dreams. Let us help you find the perfect destination for your next unforgettable journey.</p>
-                    <button className="btn btn-outline border-0 border-b-4">Read More</button>
+                    <Link to='/trips' className="btn btn-outline border-0 border-b-4 dark:border-b-white dark:text-white">Read More →</Link>
                 </div>
             </div>
 

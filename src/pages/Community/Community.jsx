@@ -25,7 +25,7 @@ const Community = () => {
                 <h2 className="text-2xl font-bold text-center md:text-3xl">
                     --Our Traveler’s Community--
                 </h2>
-                <p className="text-xl text-center text-gray-700 mt-4">
+                <p className="text-xl text-center text-gray-700 dark:text-gray-300 mt-4">
                     Explore shared stories from fellow travelers and get inspired for your next adventure. <br />Join our community to connect, share, and learn from real experiences around the world.
                 </p>
             </div>

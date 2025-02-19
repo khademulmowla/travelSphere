@@ -29,7 +29,7 @@ const Trips = () => {
                 <h2 className="text-2xl font-bold text-center md:text-3xl">
                     --Explore Our Trips--
                 </h2>
-                <p className="text-xl text-center text-gray-700 mt-4">
+                <p className="text-xl text-center text-gray-700 mt-4 dark:text-gray-300">
                     Choose from a wide range of curated trips, designed to fit every type of traveler.
                     Whether you are looking for a quick getaway or a month-long adventure, we have got something for everyone.
                 </p>
@@ -40,7 +40,7 @@ const Trips = () => {
                 <select
                     value={sortOrder}
                     onChange={(e) => setSortOrder(e.target.value)}
-                    className="px-4 py-2 border rounded-md text-gray-700"
+                    className="px-4 py-2 border rounded-md text-gray-700 dark:bg-gray-700 dark:text-white"
                 >
                     <option value="asc">Sort by Price: Low to High</option>
                     <option value="desc">Sort by Price: High to Low</option>

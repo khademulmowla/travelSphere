@@ -15,7 +15,7 @@ const CommunityCard = ({ story }) => {
     };
 
     return (
-        <div className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl flex flex-col justify-between h-full'>
+        <div className='col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl flex flex-col justify-between h-full dark:bg-gray-700 dark:text-white'>
             <div className='flex flex-col gap-2 w-full'>
                 <div className='aspect-square w-full relative overflow-hidden rounded-xl'>
                     <img
@@ -24,9 +24,9 @@ const CommunityCard = ({ story }) => {
                         alt="Package Image"
                     />
                 </div>
-                <div className='font-semibold text-lg uppercase'>{user?.displayName}</div>
-                <div className='text-lg'>{name}</div>
-                <div className='text-thin'>{description}</div>
+                <div className='font-semibold text-lg uppercase dark:text-gray-200'>{user?.displayName}</div>
+                <div className='text-lg dark:text-gray-200'>{name}</div>
+                <div className='text-thin dark:text-gray-200'>{description}</div>
             </div>
 
             {/* Share Button */}
@@ -38,7 +38,7 @@ const CommunityCard = ({ story }) => {
                     onClick={handleShare}
                     className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 transform hover:scale-105"
                 >
-                    <Link className="btn btn-outline border-0 border-b-4">Share on <FacebookIcon size={28} round /></Link>
+                    <Link className="btn btn-outline border-0 border-b-4 dark:border-b-gray-200 dark:text-white mt-2">Share on <FacebookIcon size={28} round /></Link>
                 </FacebookShareButton>
             </div>
         </div>

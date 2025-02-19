@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import LoadingSpinner from '../../components/Shared/LoadingSpinner';
 import { Helmet } from 'react-helmet-async';
 import Heading from '../../components/Shared/Heading';
@@ -131,13 +131,13 @@ const PackageDetails = () => {
                             <div key={guide._id} className="p-4 border rounded-lg shadow">
                                 <img className="w-24 h-24 rounded-full mx-auto" src={guide.image} alt={guide.name} />
                                 <h3 className="text-lg font-semibold text-center mt-2">{guide.name}</h3>
-                                <p className="text-gray-500 text-center">{guide.email}</p>
-                                <button
+                                <p className="text-gray-500 text-center dark:text-gray-200">{guide.email}</p>
+                                <Link
                                     onClick={() => navigate(`/guideprofile/${guide._id}`)}
-                                    className="mt-3 block w-full text-center text-white bg-blue-500 py-2 rounded-lg hover:bg-blue-600"
+                                    className="btn btn-outline w-full mt-2 border-0 border-b-4 dark:border-b-gray-200 dark:text-white"
                                 >
                                     View Profile
-                                </button>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -149,39 +149,39 @@ const PackageDetails = () => {
             <div className="mt-12">
                 <Heading title={name} subtitle={`Category: ${category}`} />
                 <hr className="my-6" />
-                <p className="font-bold text-xl text-gray-500">Price: ${price}</p>
+                <p className="font-bold text-xl text-gray-500 dark:text-gray-200">Price: ${price}</p>
                 <hr className="my-6" />
             </div>
             {/* booking form  */}
 
-            <section className='p-6 bg-white rounded-md shadow-md'>
-                <h2 className='text-lg font-semibold text-gray-700'>Book Package</h2>
+            <section className='p-6 bg-white rounded-md shadow-md dark:bg-gray-700 '>
+                <h2 className='text-lg font-semibold text-gray-700 dark:text-white'>Book Package</h2>
                 <form onSubmit={handleBooking}>
                     <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
                         <div>
-                            <label className='text-gray-700'>Package Name</label>
+                            <label className='text-gray-700 dark:text-white'>Package Name</label>
                             <input type='text' disabled defaultValue={trip.name} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
                         <div>
-                            <label className='text-gray-700'>Tourist Name</label>
+                            <label className='text-gray-700 dark:text-white'>Tourist Name</label>
                             <input type='text' disabled defaultValue={user?.displayName} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
                         <div>
-                            <label className='text-gray-700'>Tourist Email</label>
+                            <label className='text-gray-700 dark:text-white'>Tourist Email</label>
                             <input type='email' disabled defaultValue={user?.email} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
                         <div>
-                            <label className='text-gray-700'>Price</label>
+                            <label className='text-gray-700 dark:text-white'>Price</label>
                             <input type='text' disabled defaultValue={trip.price} className='block w-full px-4 py-2 border rounded-md' />
                         </div>
                         <div>
-                            <label className='text-gray-700'>Deadline</label>
-                            <DatePicker selected={startDate} onChange={date => setStartDate(date)} className='border p-2 rounded-md w-full' />
+                            <label className='text-gray-700 dark:text-white '>Deadline</label>
+                            <DatePicker selected={startDate} onChange={date => setStartDate(date)} className='border p-2 rounded-md w-full dark:bg-gray-700 ml-2' />
                         </div>
                     </div>
                     <div>
-                        <label className='text-gray-700'>Select Tour Guide</label>
-                        <select value={selectedGuide} onChange={(e) => setSelectedGuide(e.target.value)} className='w-1/2 mt-2 px-4 py-3 border rounded-md'>
+                        <label className='text-gray-700 dark:text-white'>Select Tour Guide</label>
+                        <select value={selectedGuide} onChange={(e) => setSelectedGuide(e.target.value)} className='w-1/2 mt-2 px-4 py-3 border rounded-md dark:bg-gray-700 ml-2'>
                             <option value=''>Select Tour Guide</option>
                             {tourGuides.map(guide => (
                                 <option key={guide._id} value={guide.name}>{guide.name}</option>
@@ -189,9 +189,9 @@ const PackageDetails = () => {
                         </select>
                     </div>
                     <div className='flex justify-end mt-6'>
-                        <button type='submit' className='px-8 py-2.5 text-white bg-gray-700 rounded-md hover:bg-gray-600'>
+                        <Link type='submit' className="btn btn-outline border-0 border-b-4 dark:border-b-white dark:hover:bg-gray-500 dark:text-white">
                             Book Now
-                        </button>
+                        </Link>
                     </div>
                 </form>
             </section>
