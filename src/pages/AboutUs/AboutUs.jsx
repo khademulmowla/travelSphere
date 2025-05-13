@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 bg-gray-100 dark:bg-gray-700 dark:text-white">
+        <div className="min-h-screen flex items-center justify-center px-4 bg-gray-100 dark:bg-gray-300 dark:text-white">
             <Helmet>
                 <title>
                     TravelSphere | About Us
@@ -15,40 +15,40 @@ const AboutUs = () => {
                 </p>
 
                 <h4 className="text-2xl font-semibold text-gray-800 mt-6 mb-3">Projects I’ve Worked On</h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <ul className="list-disc list-inside space-y-2 text-gray-800">
                     <li>
                         <span className="font-medium">Pet Adoption-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://super-cranachan-b2e40e.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://super-cranachan-b2e40e.netlify.app/" target="_blank" rel="noopener noreferrer">
                             https://super-cranachan-b2e40e.netlify.app/
                         </a>
                     </li>
                     <li>
                         <span className="font-medium">Learning Vocabulary-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://bespoke-kleicha-22ace7.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://bespoke-kleicha-22ace7.netlify.app/" target="_blank" rel="noopener noreferrer">
                             https://bespoke-kleicha-22ace7.netlify.app/
                         </a>
                     </li>
                     <li>
                         <span className="font-medium">Dream Cricket Team-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://lively-mooncake-5d3df7.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://lively-mooncake-5d3df7.netlify.app/" target="_blank" rel="noopener noreferrer">
                             https://lively-mooncake-5d3df7.netlify.app/
                         </a>
                     </li>
                     <li>
                         <span className="font-medium">Gadget Heaven-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://neon-palmier-645615.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://neon-palmier-645615.netlify.app/" target="_blank" rel="noopener noreferrer">
                             https://neon-palmier-645615.netlify.app/
                         </a>
                     </li>
                     <li>
                         <span className="font-medium">Visa Solution-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://assignment-10-af459.web.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://assignment-10-af459.web.app/" target="_blank" rel="noopener noreferrer">
                             https://assignment-10-af459.web.app/
                         </a>
                     </li>
                     <li>
                         <span className="font-medium">Historical Artifact Tracker-</span>
-                        <a className="underline text-gray-600 dark:text-gray-100" href="https://assignment-11-client-8495f.web.app/" target="_blank" rel="noopener noreferrer">
+                        <a className="underline text-gray-800" href="https://assignment-11-client-8495f.web.app/" target="_blank" rel="noopener noreferrer">
                             https://assignment-11-client-8495f.web.app/
                         </a>
                     </li>
@@ -56,7 +56,7 @@ const AboutUs = () => {
 
                 <h4 className="text-2xl font-semibold text-gray-800 mt-6 mb-3">Explore My Work</h4>
                 <div className="flex justify-center gap-4">
-                    <a href="https://github.com/khademulmowla" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-100 hover:underline text-lg font-medium">GitHub</a>
+                    <a href="https://github.com/khademulmowla" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:underline text-lg font-medium">GitHub</a>
                 </div>
             </div>
         </div >

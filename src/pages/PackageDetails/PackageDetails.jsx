@@ -189,9 +189,9 @@ const PackageDetails = () => {
                         </select>
                     </div>
                     <div className='flex justify-end mt-6'>
-                        <Link type='submit' className="btn btn-outline border-0 border-b-4 dark:border-b-white dark:hover:bg-gray-500 dark:text-white">
+                        <button type='submit' className="btn btn-outline border-0 border-b-4 dark:border-b-white dark:hover:bg-gray-500 dark:text-white">
                             Book Now
-                        </Link>
+                        </button>
                     </div>
                 </form>
             </section>

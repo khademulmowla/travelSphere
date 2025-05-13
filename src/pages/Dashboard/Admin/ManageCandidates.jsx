@@ -55,6 +55,10 @@ const ManageCandidates = () => {
             <Helmet>
                 <title>TravelSphere | Manage Candidates</title>
             </Helmet>
+            {/* Page Title */}
+            <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">
+                Manage Tour Guide Applications
+            </h2>
             <table className="table w-full table-zebra">
                 <thead>
                     <tr>

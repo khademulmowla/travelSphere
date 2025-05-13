@@ -3,6 +3,10 @@ import { TbFidgetSpinner } from "react-icons/tb";
 const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) => {
     return (
         <div className='w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
+            {/* Form Title */}
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mb-8 text-center">
+                Add a New Travel Package
+            </h2>
             <form onSubmit={handleSubmit}>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
                     <div className='space-y-6'>
@@ -11,7 +15,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                                 Trip Title
                             </label>
                             <input
-                                className='w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white'
+                                className='w-full px-4 py-3 text-gray-800 border border-gray-300 focus:outline-gray-500 rounded-md bg-white'
                                 name='name'
                                 id='name'
                                 type='text'
@@ -25,7 +29,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                             </label>
                             <select
                                 required
-                                className='w-full px-4 py-3 border-lime-300 focus:outline-lime-500 rounded-md bg-white'
+                                className='w-full px-4 py-3 border-gray-300 focus:outline-gray-500 rounded-md bg-white'
                                 name='category'
                             >
                                 <option value='Adventure'>Adventure</option>
@@ -42,7 +46,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                                     Price
                                 </label>
                                 <input
-                                    className='w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white'
+                                    className='w-full px-4 py-3 text-gray-800 border border-gray-300 focus:outline-gray-500 rounded-md bg-white'
                                     name='price'
                                     id='price'
                                     type='number'
@@ -71,7 +75,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                                             accept='image/*'
                                             multiple
                                         />
-                                        <div className='bg-lime-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-lime-500'>
+                                        <div className='bg-gray-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-gray-700'>
                                             {uploadImage.length > 0 ? `${uploadImage.length} files selected` : 'Select Images'}
                                         </div>
                                     </label>
@@ -90,7 +94,7 @@ const AddPackageForm = ({ handleSubmit, uploadImage, setUploadImage, loading }) 
                         )}
                         <button
                             type='submit'
-                            className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-lime-500'
+                            className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-gray-500 hover:bg-gray-700'
                         >
                             {loading ? <TbFidgetSpinner className='animate-spin m-auto' /> : 'Save & Continue'}
                         </button>
