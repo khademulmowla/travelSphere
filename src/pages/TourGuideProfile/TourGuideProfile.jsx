@@ -37,7 +37,7 @@ const TourGuideProfile = () => {
             <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
                 <img src={guide?.image} alt={guide?.name} className="w-full h-56 object-cover rounded-lg" />
                 <h1 className="text-2xl font-bold mt-4">{guide?.name}</h1>
-                <p className="text-gray-700">{guide?.experience} years of experience</p>
+                {/* <p className="text-gray-700">{guide?.experience} years of experience</p> */}
                 <p className="text-gray-600">{guide?.description}</p>
             </div>
 
