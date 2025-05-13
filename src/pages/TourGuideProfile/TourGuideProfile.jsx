@@ -36,13 +36,13 @@ const TourGuideProfile = () => {
         <div className="container mx-auto py-8">
             <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
                 <img src={guide?.image} alt={guide?.name} className="w-full h-56 object-cover rounded-lg" />
-                <h1 className="text-2xl font-bold mt-4">{guide?.name}</h1>
+                <h1 className="text-2xl dark:text-gray-700 font-bold mt-4">{guide?.name}</h1>
                 {/* <p className="text-gray-700">{guide?.experience} years of experience</p> */}
                 <p className="text-gray-600">{guide?.description}</p>
             </div>
 
-            <div className="mt-8">
-                <h2 className="text-xl font-bold">Stories by {guide?.name}</h2>
+            <div className="mt-8 dark:text-gray-700">
+                <h2 className="text-xl ml-4 font-bold">Stories by {guide?.name}</h2>
                 {stories.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         {stories.map((story) => (
