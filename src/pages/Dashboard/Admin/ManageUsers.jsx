@@ -53,12 +53,12 @@ const ManageUsers = () => {
                 <title>TravelSphere | Manage Users</title>
             </Helmet>
             <div className='flex justify-between my-4 items-center'>
-                <h2 className='text-2xl font-semibold'>All Users: {users.length}</h2>
+                <h2 className='text-xl md:text-2xl font-semibold'>All Users: {users.length}</h2>
 
                 <input
                     type="text"
                     placeholder="Search by Name or Email..."
-                    className="input input-bordered w-72"
+                    className="input input-bordered w-48 md:w-72"
                     onChange={handleSearchChange}
                 />
 
