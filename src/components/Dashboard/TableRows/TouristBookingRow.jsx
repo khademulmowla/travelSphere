@@ -76,13 +76,23 @@ const TouristBookingRow = ({ bookingData, refetch }) => {
                 </p>
             </td>
 
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-
-                <button onClick={() => setIsOpen(true)} className="btn mr-2 hover:bg-green-400 hover:text-white"><FaAmazonPay className='text-2xl'></FaAmazonPay></button>
-                <button onClick={handleDelete} className="btn hover:bg-red-400 hover:text-white"><FaTrashAlt className='text-2xl'></FaTrashAlt></button>
+            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <div className="flex flex-col sm:flex-row gap-2">
+                    <button
+                        onClick={() => setIsOpen(true)}
+                        className="btn w-full sm:w-auto hover:bg-green-400 hover:text-white flex items-center justify-center"
+                    >
+                        <FaAmazonPay className="text-2xl mr-1" /> Pay
+                    </button>
+                    <button
+                        onClick={handleDelete}
+                        className="btn w-full sm:w-auto hover:bg-red-400 hover:text-white flex items-center justify-center"
+                    >
+                        <FaTrashAlt className="text-2xl mr-1" /> Delete
+                    </button>
+                </div>
                 <PurchaseModal bookingData={bookingData} closeModal={closeModal} isOpen={isOpen} refetch={refetch} />
             </td>
-
         </tr>
     );
 };
