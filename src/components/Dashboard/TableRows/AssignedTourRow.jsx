@@ -46,20 +46,24 @@ const AssignedTourRow = ({ assignedTour, refetch, handleStatusChange }) => {
                 </p>
             </td>
 
-            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                <button
-                    className={`btn mr-2 ${status === "pending" ? "bg-gray-300 cursor-not-allowed" : "hover:bg-green-400 hover:text-white"
-                        }`}
-                    onClick={handleAccept}
-                    disabled={status === "pending"}>
-                    <FcAcceptDatabase className='text-2xl' /> Accept
-                </button>
-                <button
-                    className="btn hover:bg-red-400 hover:text-white"
-                    onClick={handleReject}>
-                    <RxCross1 className='text-2xl' /> Reject
-                </button>
+            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <div className="flex flex-col sm:flex-row gap-2">
+                    <button
+                        className={`btn w-full sm:w-auto ${status === "pending" ? "bg-gray-300 cursor-not-allowed" : "hover:bg-green-400 hover:text-white"}`}
+                        onClick={handleAccept}
+                        disabled={status === "pending"}
+                    >
+                        <FcAcceptDatabase className="text-2xl mr-1" /> Accept
+                    </button>
+                    <button
+                        className="btn w-full sm:w-auto hover:bg-red-400 hover:text-white"
+                        onClick={handleReject}
+                    >
+                        <RxCross1 className="text-2xl mr-1" /> Reject
+                    </button>
+                </div>
             </td>
+
         </tr>
     );
 };
