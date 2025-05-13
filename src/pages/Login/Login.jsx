@@ -104,14 +104,14 @@ const Login = () => {
                     <div>
                         <button
                             type='submit'
-                            className='bg-lime-500 w-full rounded-md py-3 text-white'
+                            className='bg-gray-700 w-full rounded-md py-3 text-white'
                         >
                             {loading ? <TbFidgetSpinner className='animate-spin m-auto' /> : 'Continue'}
                         </button>
                     </div>
                 </form>
                 <div className='space-y-1 text-center'>
-                    <button onClick={handleForgotPassword} className='text-xs hover:underline hover:text-lime-500 text-gray-400'>
+                    <button onClick={handleForgotPassword} className='text-xs hover:underline hover:text-gray-700 text-gray-500'>
                         Forgot password?
                     </button>
                 </div>
@@ -126,7 +126,7 @@ const Login = () => {
                 </div>
                 <p className='px-6 text-sm text-center text-gray-400'>
                     Don&apos;t have an account yet?{' '}
-                    <Link to='/signup' className='hover:underline hover:text-lime-500 text-gray-600'>
+                    <Link to='/signup' className='hover:underline hover:text-gray-700 text-gray-500'>
                         Sign up
                     </Link>
                 </p>
