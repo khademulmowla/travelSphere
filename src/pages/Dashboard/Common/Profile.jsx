@@ -46,19 +46,23 @@ const Profile = () => {
                                 Email
                                 <span className='font-bold text-black'>{user.email}</span>
                             </p>
-                            <button
-                                className="btn btn-sm btn-outline border-0 border-b-4"
-                                onClick={() => setIsModalOpen(true)}>
-                                Edit Profile
-                            </button>
-                            {role === "tourist" && (
+                            <div className="flex flex-col sm:flex-row gap-3">
                                 <button
-                                    className="btn btn-sm btn-outline border-0 border-b-4"
-                                    onClick={() => navigate("/dashboard/join-guide")}
+                                    className="btn btn-sm btn-outline border-0 border-b-4 w-full sm:w-auto"
+                                    onClick={() => setIsModalOpen(true)}
                                 >
-                                    Apply For Tour Guide
+                                    Edit Profile
                                 </button>
-                            )}
+
+                                {role === "tourist" && (
+                                    <button
+                                        className="btn btn-sm btn-outline border-0 border-b-4 w-full sm:w-auto"
+                                        onClick={() => navigate("/dashboard/join-guide")}
+                                    >
+                                        Apply For Tour Guide
+                                    </button>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
