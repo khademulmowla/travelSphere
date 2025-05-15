@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import logo from '../../../assets/images/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -7,7 +7,11 @@ import DarkModeToggle from '../../DarkModeToggle/DarkModeToggle';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+    const handleMenuClick = () => {
+        setIsDropdownOpen(false);
+    };
     const handleLogOut = async () => {
         try {
             await logOut();
@@ -99,7 +103,11 @@ const Navbar = () => {
                 {/* Mobile menu */}
                 <div className="lg:hidden flex items-center">
                     <div className="dropdown dropdown-end z-50">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle">
+                        <label
+                            tabIndex={0}
+                            className="btn btn-ghost btn-circle"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6"
@@ -107,54 +115,29 @@ const Navbar = () => {
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </label>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#c1ac28] rounded-box w-52 dark:bg-gray-700"
-                        >
-                            <li>
-                                <Link to="/" className="dark:text-white">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/trips" className="dark:text-white">
-                                    Trips
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/community" className="dark:text-white">
-                                    Community
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/aboutus" className="dark:text-white">
-                                    About Us
-                                </Link>
-                            </li>
-                            {!user && (
-                                <li>
-                                    <Link to="/login" className="dark:text-white">
-                                        Login
-                                    </Link>
-                                </li>
-                            )}
-                            {user && (
-                                <li>
-                                    <Link to="/dashboard" className="dark:text-white">
-                                        Dashboard
-                                    </Link>
-                                </li>
-                            )}
-                        </ul>
+
+                        {isDropdownOpen && (
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#c1ac28] rounded-box w-52 dark:bg-gray-700"
+                            >
+                                <li><Link to="/" className="dark:text-white" onClick={handleMenuClick}>Home</Link></li>
+                                <li><Link to="/trips" className="dark:text-white" onClick={handleMenuClick}>Trips</Link></li>
+                                <li><Link to="/community" className="dark:text-white" onClick={handleMenuClick}>Community</Link></li>
+                                <li><Link to="/aboutus" className="dark:text-white" onClick={handleMenuClick}>About Us</Link></li>
+                                {!user && (
+                                    <li><Link to="/login" className="dark:text-white" onClick={handleMenuClick}>Login</Link></li>
+                                )}
+                                {user && (
+                                    <li><Link to="/dashboard" className="dark:text-white" onClick={handleMenuClick}>Dashboard</Link></li>
+                                )}
+                            </ul>
+                        )}
                     </div>
+
                 </div>
             </div>
         </div>
