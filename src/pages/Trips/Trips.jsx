@@ -36,7 +36,7 @@ const Trips = () => {
             </div>
 
             {/* Sorting dropdown */}
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-center md:justify-end mb-4">
                 <select
                     value={sortOrder}
                     onChange={(e) => setSortOrder(e.target.value)}
