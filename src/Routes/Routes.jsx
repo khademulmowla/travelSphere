@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/package/:id',
-                element: <PackageDetails></PackageDetails>
+                element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>
             },
             {
                 path: "/community",
@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/guideprofile/:id",
-                element: <TourGuideProfile></TourGuideProfile>
+                element: <PrivateRoute><TourGuideProfile></TourGuideProfile></PrivateRoute>
             }
 
         ]
