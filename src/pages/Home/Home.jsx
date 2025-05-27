@@ -8,6 +8,7 @@ import TouristStory from "./TouristStory/TouristStory";
 import Testimonial from "./Testimonial/Testimonial";
 import TravelBlogs from "./TravelBlog/TravelBlogs";
 import Stat from "./Stat/Stat";
+import HowItWorks from "./HowItWorks/HowItWorks";
 
 const Home = () => {
     return (
@@ -26,6 +27,7 @@ const Home = () => {
             <ChooseUs></ChooseUs>
             <TravelBlogs></TravelBlogs>
             <Testimonial></Testimonial>
+            <HowItWorks></HowItWorks>
 
         </div>
     );

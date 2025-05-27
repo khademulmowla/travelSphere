@@ -22,7 +22,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar bg-base-300 shadow-sm px-6 mx-auto dark:bg-gray-800">
+        <div className="navbar bg-base-300 shadow-sm px-6 mx-auto dark:bg-gray-900">
             <div className="flex justify-between items-center w-full">
                 <Link to="/" className="flex gap-2 items-center">
                     <img className="w-auto h-7" src={logo} alt="" />

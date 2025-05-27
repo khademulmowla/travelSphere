@@ -20,7 +20,7 @@ const Slide = ({ image, text, text2 }) => {
                     <br />
                     <Link
                         to="/trips"
-                        className="w-full px-4 py-3 sm:px-5 sm:py-4 mt-4 text-xs sm:text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500"
+                        className="btn btn-outline w-[64px] mt-2 border-0 border-b-4 border-b-gray-200 text-white"
                     >
                         Track
                     </Link>

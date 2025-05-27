@@ -32,40 +32,40 @@ const ChooseUs = () => {
                     </div>
 
                     <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="bg-base-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="p-8 rounded-lg shadow-md text-center dark:bg-gray-700">
                             <div className="mb-4">
                                 <i className="fas fa-clock text-4xl text-black"></i>
                             </div>
-                            <h3 className="text-lg font-semibold text-black">Fast and hassle-free</h3>
-                            <p className="font-thin mt-2 text-black">
-                                Enjoy a far simpler process than dealing with foreign governments.
+                            <h3 className="text-lg font-semibold">Connect with Local Guides</h3>
+                            <p className="font-thin mt-2">
+                                Easily find and connect with trusted, verified local tour guides for a more authentic trip.
                             </p>
                         </div>
-                        <div className="bg-base-300 p-8 rounded-lg shadow-md text-center">
+                        <div className="p-8 rounded-lg shadow-md text-center dark:bg-gray-700">
                             <div className="mb-4">
-                                <i className="fas fa-shield-alt text-4xl text-black"></i>
+                                <i className="fas fa-shield-alt text-4xl"></i>
                             </div>
-                            <h3 className="text-lg font-semibold text-black">Secure and Safe</h3>
-                            <p className="font-thin mt-2 text-black">
+                            <h3 className="text-lg font-semibold">Secure and Safe</h3>
+                            <p className="font-thin mt-2">
                                 All your information is always protected with best-in-class security.
                             </p>
                         </div>
-                        <div className="bg-base-300 p-8 rounded-lg shadow-md text-center">
+                        <div className="p-8 rounded-lg shadow-md text-center dark:bg-gray-700">
                             <div className="mb-4">
                                 <i className="fas fa-file-alt text-4xl text-black"></i>
                             </div>
-                            <h3 className="text-lg font-semibold text-black">Get Approved</h3>
-                            <p className="font-thin mt-2 text-black">
-                                We have a 98% visa approval rate. Our team is committed to your success!
+                            <h3 className="text-lg font-semibold">Explore Curated Packages</h3>
+                            <p className="font-thin mt-2">
+                                Choose from handpicked travel packages tailored to different interests and travel styles.
                             </p>
                         </div>
-                        <div className="bg-base-100 p-8 rounded-lg shadow-md text-center">
+                        <div className="p-8 rounded-lg shadow-md text-center dark:bg-gray-700">
                             <div className="mb-4">
                                 <i className="fas fa-question-circle text-4xl text-black"></i>
                             </div>
-                            <h3 className="text-lg font-semibold text-black">Awesome support</h3>
-                            <p className="font-thin mt-2 text-black">
-                                Don’t worry! <br /> Our customer support is ready to help you 24/7.
+                            <h3 className="text-lg font-semibold">Awesome support</h3>
+                            <p className="font-thin mt-2">
+                                Don’t worry! <br /> Our support is ready to help you 24/7.
                             </p>
                         </div>
                     </div>

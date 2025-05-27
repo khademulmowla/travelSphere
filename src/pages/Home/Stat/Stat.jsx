@@ -6,7 +6,7 @@ const Stat = () => {
         <div className='px-8 py-12'>
             <SectionTitle
                 subHeading={"Transforming Dreams into Journey"}
-                heading={"Travel Tale"}
+                heading={"Statsphere of TravelSphere"}
             ></SectionTitle>
             {/* Horizontal line at the top */}
             <hr className="border-t-2 border-gray-200 mb-12" />
@@ -35,9 +35,9 @@ const Stat = () => {
 
                 <div className="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-base-300">
                     <p className="text-3xl font-semibold text-black dark:text-white">
-                        <CountUp start={0} end={98} duration={6} />%
+                        <CountUp start={0} end={5000} duration={6} />+
                     </p>
-                    <h3 className="text-lg font-thin text-black dark:text-white">visa approval rate</h3>
+                    <h3 className="text-lg font-thin text-black dark:text-white">Travel Stories Shared</h3>
                 </div>
             </div>
 

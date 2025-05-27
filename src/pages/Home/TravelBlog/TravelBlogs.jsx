@@ -24,7 +24,7 @@ const TravelBlogs = () => {
                 subHeading={"Check Latest Blogs"}
                 heading={"Travel Blogs"}
             ></SectionTitle>
-            <div className="container mx-auto px-8 text-center py-8 bg-gray-100 dark:bg-gray-900 dark:text-white">
+            <div className="container mx-auto px-8 text-center py-8 dark:bg-gray-900 dark:text-white">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog) => (
                         <div
