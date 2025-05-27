@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import travelspherevideo from '../../../assets/video/travelsphere.mp4';
 
 const OverView = () => {
     return (
@@ -19,8 +20,8 @@ const OverView = () => {
                         autoPlay
                         muted
                     >
-                        <source src="/public/video/travelsphere.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
+                        <source src={travelspherevideo} type="video/mp4" />
+
                     </video>
                 </div>
                 {/* <Link

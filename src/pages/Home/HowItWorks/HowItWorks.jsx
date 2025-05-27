@@ -3,7 +3,7 @@ import { FaUserPlus, FaSearchLocation, FaCreditCard, FaComments } from 'react-ic
 
 const HowItWorks = () => {
     return (
-        <div className='px-8 py-12'>
+        <div className='px-8 py-8'>
             <SectionTitle
                 subHeading={"Start Exploring in Minutes"}
                 heading={"How TravelSphere Works"}
