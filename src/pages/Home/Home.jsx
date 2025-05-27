@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Carousel from "./Banner/Carousel";
 import ChooseUs from "./ChooseUs/ChooseUs";
 import Featured from "./Featured/Featured";
-import OverView from "./OverView/OverView";
+// import OverView from "./OverView/OverView";
 import Tourism from "./Tourism/Tourism";
 import TouristStory from "./TouristStory/TouristStory";
 import Testimonial from "./Testimonial/Testimonial";
@@ -19,7 +19,7 @@ const Home = () => {
                 </title>
             </Helmet>
             <Carousel></Carousel>
-            <OverView></OverView>
+            {/* <OverView></OverView> */}
             <Stat></Stat>
             <Tourism></Tourism>
             <TouristStory></TouristStory>
